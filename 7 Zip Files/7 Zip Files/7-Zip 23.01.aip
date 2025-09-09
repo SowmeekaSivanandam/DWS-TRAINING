@@ -1,0 +1,1511 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="23.0" version="23.0" Modules="enterprise" RootPath="." Language="en" Id="{7F26C1FE-6DF5-48AA-A16C-CFAF4EF841AC}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="ActSyncAppComponent;CPLAppletComponent;AutorunComponent;GameUxComponent;SilverlightSlnComponent;SharePointSlnComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiValidationComponent">
+    <ROW Table="InstallShield" Column="Property" Category="Identifier" Description="Name of property, uppercase if settable by launcher or loader." Options="10" ColumnType="1" ColumnIndex="0" ColumnSize="72"/>
+    <ROW Table="InstallShield" Column="Value" Category="Text" Description="String value for property." Options="9" ColumnType="1" ColumnIndex="1" ColumnSize="0"/>
+    <ROW Table="MsiPatchMetadata" Column="Company" Category="Text" Description="Optional company name" Options="11" ColumnType="1" ColumnIndex="1" ColumnSize="72"/>
+    <ROW Table="MsiPatchMetadata" Column="PatchConfiguration_" KeyTable="ISPatchConfiguration" KeyColumn="1" Category="Text" Description="Foreign key to the ISPatchConfiguration table" Options="10" ColumnType="1" ColumnIndex="0" ColumnSize="72"/>
+    <ROW Table="MsiPatchMetadata" Column="Property" Category="Text" Description="Name of the metadata" Options="10" ColumnType="1" ColumnIndex="2" ColumnSize="72"/>
+    <ROW Table="MsiPatchMetadata" Column="Value" Category="Text" Description="Value of the metadata" Options="9" ColumnType="1" ColumnIndex="3" ColumnSize="0"/>
+    <ROW Table="MsiPatchOldAssemblyFile" Column="Assembly_" KeyTable="MsiPatchOldAssemblyName" KeyColumn="1" Options="11" ColumnType="1" ColumnIndex="1" ColumnSize="72"/>
+    <ROW Table="MsiPatchOldAssemblyFile" Column="File_" KeyTable="File" KeyColumn="1" Options="10" ColumnType="1" ColumnIndex="0" ColumnSize="72"/>
+    <ROW Table="MsiPatchOldAssemblyName" Column="Assembly" Options="10" ColumnType="1" ColumnIndex="0" ColumnSize="72"/>
+    <ROW Table="MsiPatchOldAssemblyName" Column="Name" Options="10" ColumnType="1" ColumnIndex="1" ColumnSize="255"/>
+    <ROW Table="MsiPatchOldAssemblyName" Column="Value" Options="9" ColumnType="1" ColumnIndex="2" ColumnSize="255"/>
+    <ROW Table="MsiPatchSequence" Column="PatchConfiguration_" KeyTable="ISPatchConfiguration" KeyColumn="1" Category="Text" Description="Foreign key to the patch configuration table" Options="10" ColumnType="1" ColumnIndex="0" ColumnSize="72"/>
+    <ROW Table="MsiPatchSequence" Column="PatchFamily" Category="Text" Description="Name of the family to which this patch belongs" Options="10" ColumnType="1" ColumnIndex="1" ColumnSize="0"/>
+    <ROW Table="MsiPatchSequence" Column="Sequence" Category="Version" Description="The version of this patch in this family" Options="8" ColumnType="1" ColumnIndex="3" ColumnSize="0"/>
+    <ROW Table="MsiPatchSequence" Column="Supersede" Category="Integer" Description="Supersede" Options="8" ColumnType="2" ColumnIndex="4" ColumnSize="2"/>
+    <ROW Table="MsiPatchSequence" Column="Target" Category="Text" Description="Target product codes for this patch family" Options="11" ColumnType="1" ColumnIndex="2" ColumnSize="0"/>
+    <ROW Table="MsiServiceConfigFailureActions" Column="Actions" Category="Text" Description="A list of integer actions separated by [~] delimiters: 0 = SC_ACTION_NONE, 1 = SC_ACTION_RESTART, 2 = SC_ACTION_REBOOT, 3 = SC_ACTION_RUN_COMMAND. Terminate with [~][~]" Options="9" ColumnType="1" ColumnIndex="6" ColumnSize="0"/>
+    <ROW Table="MsiServiceConfigFailureActions" Column="Command" Category="Formatted" Description="Command line of the process to CreateProcess function to execute" Options="13" ColumnType="1" ColumnIndex="5" ColumnSize="255"/>
+    <ROW Table="MsiServiceConfigFailureActions" Column="Component_" KeyTable="Component" KeyColumn="1" Category="Identifier" Description="Required foreign key into the Component Table that controls the configuration of the service" Options="8" ColumnType="1" ColumnIndex="8" ColumnSize="72"/>
+    <ROW Table="MsiServiceConfigFailureActions" Column="DelayActions" Category="Text" Description="A list of delays (time in milli-seconds), separated by [~] delmiters, to wait before taking the corresponding Action. Terminate with [~][~]" Options="9" ColumnType="1" ColumnIndex="7" ColumnSize="0"/>
+    <ROW Table="MsiServiceConfigFailureActions" Column="Event" MinValue="0" MaxValue="7" Description="Bit field:   0x1 = Install, 0x2 = Uninstall, 0x4 = Reinstall" Options="8" ColumnType="2" ColumnIndex="2" ColumnSize="2"/>
+    <ROW Table="MsiServiceConfigFailureActions" Column="MsiServiceConfigFailureActions" Category="Identifier" Description="Primary key, non-localized token" Options="10" ColumnType="1" ColumnIndex="0" ColumnSize="72"/>
+    <ROW Table="MsiServiceConfigFailureActions" Column="Name" Category="Formatted" Description="Name of a service. /, \, comma and space are invalid" Options="8" ColumnType="1" ColumnIndex="1" ColumnSize="255"/>
+    <ROW Table="MsiServiceConfigFailureActions" Column="RebootMessage" Category="Formatted" Description="Message to be broadcast to server users before rebooting" Options="13" ColumnType="1" ColumnIndex="4" ColumnSize="255"/>
+    <ROW Table="MsiServiceConfigFailureActions" Column="ResetPeriod" MinValue="0" MaxValue="2147483647" Description="Time in seconds after which to reset the failure count to zero. Leave blank if it should never be reset" Options="9" ColumnType="3" ColumnIndex="3" ColumnSize="4"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="AgreeToLicense" Value="No"/>
+    <ROW Property="ApplicationUsers" Value="AllUsers"/>
+    <ROW Property="DWUSINTERVAL" Value="30"/>
+    <ROW Property="DialogCaption" Value="InstallShield for Windows Installer"/>
+    <ROW Property="DisplayNameCustom" Value="Custom"/>
+    <ROW Property="DisplayNameMinimal" Value="Minimal"/>
+    <ROW Property="DisplayNameTypical" Value="Typical"/>
+    <ROW Property="Display_IsBitmapDlg" Value="1"/>
+    <ROW Property="ISCHECKFORPRODUCTUPDATES" Value="1"/>
+    <ROW Property="ISSHOWMSILOG" Value="[~]"/>
+    <ROW Property="ISSHOWMSILOG_1" Value="[~]"/>
+    <ROW Property="ISSHOWMSILOG_2" Value="[~]"/>
+    <ROW Property="ISVROOT_PORT_NO" Value="0"/>
+    <ROW Property="IS_COMPLUS_PROGRESSTEXT_COST" Value="Costing COM+ application: [1]"/>
+    <ROW Property="IS_COMPLUS_PROGRESSTEXT_INSTALL" Value="Installing COM+ application: [1]"/>
+    <ROW Property="IS_COMPLUS_PROGRESSTEXT_UNINSTALL" Value="Uninstalling COM+ application: [1]"/>
+    <ROW Property="IS_PREVENT_DOWNGRADE_EXIT" Value="A newer version of this application is already installed on this computer. If you wish to install this version, please uninstall the newer version first. Click OK to exit the wizard."/>
+    <ROW Property="IS_PROGMSG_TEXTFILECHANGS_REPLACE" Value="Replacing %s with %s in %s..."/>
+    <ROW Property="IS_PROGMSG_XML_COSTING" Value="Costing XML files..."/>
+    <ROW Property="IS_PROGMSG_XML_CREATE_FILE" Value="Creating XML file %s..."/>
+    <ROW Property="IS_PROGMSG_XML_FILES" Value="Performing XML file changes..."/>
+    <ROW Property="IS_PROGMSG_XML_REMOVE_FILE" Value="Removing XML file %s..."/>
+    <ROW Property="IS_PROGMSG_XML_ROLLBACK_FILES" Value="Rolling back XML file changes..."/>
+    <ROW Property="IS_PROGMSG_XML_UPDATE_FILE" Value="Updating XML file %s..."/>
+    <ROW Property="IS_SQLSERVER_AUTHENTICATION" Value="0"/>
+    <ROW Property="IS_SQLSERVER_USERNAME" Value="sa"/>
+    <ROW Property="InstallChoice" Value="AR"/>
+    <ROW Property="LAUNCHREADME" Value="[~]"/>
+    <ROW Property="Manufacturer" Value="Igor Pavlov"/>
+    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp"/>
+    <ROW Property="PROGMSG_IIS_CREATEAPPPOOL" Value="Creating application pool %s"/>
+    <ROW Property="PROGMSG_IIS_CREATEAPPPOOLS" Value="Creating application Pools..."/>
+    <ROW Property="PROGMSG_IIS_CREATEVROOT" Value="Creating IIS virtual directory %s"/>
+    <ROW Property="PROGMSG_IIS_CREATEVROOTS" Value="Creating IIS virtual directories..."/>
+    <ROW Property="PROGMSG_IIS_CREATEWEBSERVICEEXTENSION" Value="Creating web service extension"/>
+    <ROW Property="PROGMSG_IIS_CREATEWEBSERVICEEXTENSIONS" Value="Creating web service extensions..."/>
+    <ROW Property="PROGMSG_IIS_CREATEWEBSITE" Value="Creating IIS website %s"/>
+    <ROW Property="PROGMSG_IIS_CREATEWEBSITES" Value="Creating IIS websites..."/>
+    <ROW Property="PROGMSG_IIS_EXTRACT" Value="Extracting information for IIS virtual directories..."/>
+    <ROW Property="PROGMSG_IIS_EXTRACTDONE" Value="Extracted information for IIS virtual directories..."/>
+    <ROW Property="PROGMSG_IIS_EXTRACTDONEz" Value="Extracted information for IIS virtual directories..."/>
+    <ROW Property="PROGMSG_IIS_EXTRACTzDONE" Value="Extracted information for IIS virtual directories..."/>
+    <ROW Property="PROGMSG_IIS_REMOVEAPPPOOL" Value="Removing application pool"/>
+    <ROW Property="PROGMSG_IIS_REMOVEAPPPOOLS" Value="Removing application pools..."/>
+    <ROW Property="PROGMSG_IIS_REMOVESITE" Value="Removing web site at port %d"/>
+    <ROW Property="PROGMSG_IIS_REMOVEVROOT" Value="Removing IIS virtual directory %s"/>
+    <ROW Property="PROGMSG_IIS_REMOVEVROOTS" Value="Removing IIS virtual directories..."/>
+    <ROW Property="PROGMSG_IIS_REMOVEWEBSERVICEEXTENSION" Value="Removing web service extension"/>
+    <ROW Property="PROGMSG_IIS_REMOVEWEBSERVICEEXTENSIONS" Value="Removing web service extensions..."/>
+    <ROW Property="PROGMSG_IIS_REMOVEWEBSITES" Value="Removing IIS websites..."/>
+    <ROW Property="PROGMSG_IIS_ROLLBACKAPPPOOLS" Value="Rolling back application pools..."/>
+    <ROW Property="PROGMSG_IIS_ROLLBACKVROOTS" Value="Rolling back virtual directory and web site changes..."/>
+    <ROW Property="PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS" Value="Rolling back web service extensions..."/>
+    <ROW Property="ProductCode" Value="1033:{41DDAE41-17B0-4BBD-B4D4-843A24DF5892} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="7-Zip 23.01"/>
+    <ROW Property="ProductVersion" Value="23.01" Options="32"/>
+    <ROW Property="ProgressType0" Value="install"/>
+    <ROW Property="ProgressType1" Value="Installing"/>
+    <ROW Property="ProgressType2" Value="installed"/>
+    <ROW Property="ProgressType3" Value="installs"/>
+    <ROW Property="RebootYesNo" Value="Yes"/>
+    <ROW Property="ReinstallModeText" Value="omus"/>
+    <ROW Property="RepackagingMode" Value="InstallMonitor"/>
+    <ROW Property="RestartManagerOption" Value="CloseRestart"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="SetupType" Value="Typical"/>
+    <ROW Property="UpgradeCode" Value="{5B4A1709-4051-48BF-8CAD-E8DE3DDAC328}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60Display" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+    <ROW Property="_IsMaintenance" Value="Change"/>
+    <ROW Property="_IsSetupTypeMin" Value="Typical"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="ALLUSERSPROFILE" Directory_Parent="TARGETDIR" DefaultDir="ALLUSE~1|ALLUSERSPROFILE" IsPseudoRoot="1"/>
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1" DirectoryOptions="3"/>
+    <ROW Directory="ASSETS" Directory_Parent="CDN" DefaultDir="assets"/>
+    <ROW Directory="AdminToolsFolder" Directory_Parent="TARGETDIR" DefaultDir="ADMINT~1|AdminToolsFolder" IsPseudoRoot="1"/>
+    <ROW Directory="AppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="APPLIC~1|AppDataFolder" IsPseudoRoot="1"/>
+    <ROW Directory="BUILDMANIFESTS" Directory_Parent="ASSETS" DefaultDir="BUILDM~1|BuildManifests"/>
+    <ROW Directory="CDN" Directory_Parent="SETTINGS" DefaultDir="cdn"/>
+    <ROW Directory="CommonAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="COMMON~1|CommonAppDataFolder" IsPseudoRoot="1"/>
+    <ROW Directory="CommonFiles64Folder" Directory_Parent="TARGETDIR" DefaultDir="_COMMO~1|CommonFiles64Folder" IsPseudoRoot="1"/>
+    <ROW Directory="CommonFilesArmFolder" Directory_Parent="TARGETDIR" DefaultDir="COMMON~2|CommonFilesArmFolder:COMMON~1|CommonFilesArmFolder" IsPseudoRoot="1"/>
+    <ROW Directory="CommonFilesFolder" Directory_Parent="TARGETDIR" DefaultDir="_COMMO~2|CommonFilesFolder" IsPseudoRoot="1"/>
+    <ROW Directory="DATABASEDIR" Directory_Parent="ISYourDataBaseDir" DefaultDir=".:DATABA~1|DATABASEDIR"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="_DESKT~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="FILES" Directory_Parent="ASSETS" DefaultDir="files"/>
+    <ROW Directory="FavoritesFolder" Directory_Parent="TARGETDIR" DefaultDir="FAVORI~1|FavoritesFolder" IsPseudoRoot="1"/>
+    <ROW Directory="FontsFolder" Directory_Parent="TARGETDIR" DefaultDir="_FONTS~1|FontsFolder" IsPseudoRoot="1"/>
+    <ROW Directory="GlobalAssemblyCache" Directory_Parent="TARGETDIR" DefaultDir="GLOBAL~1|GlobalAssemblyCache" IsPseudoRoot="1"/>
+    <ROW Directory="INSTALLDIR" Directory_Parent="__ZIP" DefaultDir=".:INSTAL~1|INSTALLDIR"/>
+    <ROW Directory="ISCommonFilesFolder" Directory_Parent="CommonFilesFolder" DefaultDir="Instal~1|InstallShield"/>
+    <ROW Directory="ISMyCompanyDir" Directory_Parent="ProgramFilesFolder" DefaultDir="MYCOMP~1|My Company Name"/>
+    <ROW Directory="ISMyProductDir" Directory_Parent="ISMyCompanyDir" DefaultDir="MYPROD~1|My Product Name"/>
+    <ROW Directory="ISYourDataBaseDir" Directory_Parent="APPDIR" DefaultDir="Database" DirectoryOptions="3"/>
+    <ROW Directory="LANG" Directory_Parent="APPDIR" DefaultDir="Lang" DirectoryOptions="3"/>
+    <ROW Directory="LISTSYNC" Directory_Parent="ONEDRIVE" DefaultDir="ListSync"/>
+    <ROW Directory="LocalAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="LOCALA~1|LocalAppDataFolder" IsPseudoRoot="1"/>
+    <ROW Directory="MICROSOFT" Directory_Parent="LocalAppDataFolder" DefaultDir="MICROS~1|Microsoft"/>
+    <ROW Directory="MyPicturesFolder" Directory_Parent="TARGETDIR" DefaultDir="MYPICT~1|MyPicturesFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ONEDRIVE" Directory_Parent="MICROSOFT" DefaultDir="OneDrive"/>
+    <ROW Directory="ONESHELL" Directory_Parent="ASSETS" DefaultDir="oneshell"/>
+    <ROW Directory="PUBLIC" Directory_Parent="TARGETDIR" DefaultDir="PUBLIC" IsPseudoRoot="1"/>
+    <ROW Directory="PersonalFolder" Directory_Parent="TARGETDIR" DefaultDir="_PERSO~1|PersonalFolder" IsPseudoRoot="1"/>
+    <ROW Directory="PrimaryVolumePath" Directory_Parent="TARGETDIR" DefaultDir="PRIMAR~1|PrimaryVolumePath" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramFiles64Folder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~2|ProgramFiles64Folder" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramFilesArmFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~3|ProgramFilesArmFolder:PROGRA~1|ProgramFilesArmFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramFilesFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramFilesFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="_PROGR~1|ProgramMenuFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SETTINGS" Directory_Parent="LISTSYNC" DefaultDir="settings"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="SendToFolder" Directory_Parent="TARGETDIR" DefaultDir="_SENDT~1|SendToFolder" IsPseudoRoot="1"/>
+    <ROW Directory="StartMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="STARTM~1|StartMenuFolder" IsPseudoRoot="1"/>
+    <ROW Directory="StartupFolder" Directory_Parent="TARGETDIR" DefaultDir="_START~1|StartupFolder" IsPseudoRoot="1"/>
+    <ROW Directory="System16Folder" Directory_Parent="TARGETDIR" DefaultDir="_SYSTE~2|System16Folder" IsPseudoRoot="1"/>
+    <ROW Directory="System64Folder" Directory_Parent="TARGETDIR" DefaultDir="_SYSTE~3|System64Folder" IsPseudoRoot="1"/>
+    <ROW Directory="SystemArmFolder" Directory_Parent="TARGETDIR" DefaultDir="SYSTEM~1|SystemArmFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SystemFolder" Directory_Parent="TARGETDIR" DefaultDir="_SYSTE~1|SystemFolder" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="TempFolder" Directory_Parent="TARGETDIR" DefaultDir="_TEMP~~1|TempFolder" IsPseudoRoot="1"/>
+    <ROW Directory="TemplateFolder" Directory_Parent="TARGETDIR" DefaultDir="_SHELL~1|TemplateFolder" IsPseudoRoot="1"/>
+    <ROW Directory="USERPROFILE" Directory_Parent="TARGETDIR" DefaultDir="USERPR~1|USERPROFILE" IsPseudoRoot="1"/>
+    <ROW Directory="WindowsFolder" Directory_Parent="TARGETDIR" DefaultDir="_WINDO~1|WindowsFolder" IsPseudoRoot="1"/>
+    <ROW Directory="WindowsVolume" Directory_Parent="TARGETDIR" DefaultDir="_WINRO~1|WindowsVolume" IsPseudoRoot="1"/>
+    <ROW Directory="__ZIP" Directory_Parent="ProgramFiles64Folder" DefaultDir="7-Zip"/>
+    <ROW Directory="__zip1" Directory_Parent="ProgramMenuFolder" DefaultDir="7-Zip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SideBySideGuidComponent">
+    <ROW Component="APPDIR" Value="{DFB15865-07F9-448C-87B9-F291744ECAD5}"/>
+    <ROW Component="ProductInformation" Value="{568848AE-70B3-43B6-9898-B06A7C74A826}"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{DFB15865-07F9-448C-87B9-F291744ECAD5}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="Folder_7Zip" ComponentId="{6BEA4F50-9BE8-4C9D-BF32-2BDCB344A6BB}" Directory_="APPDIR" Attributes="256" KeyPath="_z.sfx"/>
+    <ROW Component="Folder_Lang" ComponentId="{DCD9F127-78D7-4D32-A79A-7F86515DE975}" Directory_="LANG" Attributes="256" KeyPath="en.ttt"/>
+    <ROW Component="ProductInformation" ComponentId="{568848AE-70B3-43B6-9898-B06A7C74A826}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="RegistryData_HKCR" ComponentId="{EE779068-CD88-4A56-8DC0-33117283B849}" Directory_="ProgramFilesFolder" Attributes="16"/>
+    <ROW Component="RegistryData_HKCR64" ComponentId="{9D4A6FE8-3354-4C0B-8F1A-07AFECD6642C}" Directory_="ProgramFiles64Folder" Attributes="256"/>
+    <ROW Component="RegistryData_HKCU" ComponentId="{F02B1E58-7B77-4C0C-9EFE-B54CE269E16D}" Directory_="ProgramFilesFolder" Attributes="4" KeyPath="Registry_3093168A_F7C7_419E_8AF4_B012EA36CA8F_"/>
+    <ROW Component="RegistryData_HKLM" ComponentId="{2E6FC40E-27AC-4379-95DB-B4534108219C}" Directory_="ProgramFilesFolder" Attributes="0"/>
+    <ROW Component="RegistryData_HKLM64" ComponentId="{05F2BD11-8ED8-4722-B100-986D5E257CD9}" Directory_="ProgramFiles64Folder" Attributes="256"/>
+    <ROW Component="RegistryData_HKU" ComponentId="{C974D04B-4BDA-471D-97D3-AA65EA714B02}" Directory_="ProgramFilesFolder" Attributes="0"/>
+    <ROW Component="RemoveRegistry_Component" ComponentId="{B63A1603-F9A5-4B55-9ED8-B6401AF9C7EC}" Directory_="ProgramFilesFolder" Attributes="0"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{4A99BE54-3BA5-4C56-A58B-A638CFF79442}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="_7z.dll" ComponentId="{82A2A482-B755-46D2-86CA-E8507271EAF1}" Directory_="APPDIR" Attributes="256" KeyPath="_z.dll"/>
+    <ROW Component="_7z.exe" ComponentId="{5B77BDB5-FC00-481F-A91E-5B432DB387B8}" Directory_="APPDIR" Attributes="256" KeyPath="_z.exe"/>
+    <ROW Component="_7zfm.exe" ComponentId="{AF2CC11D-1B80-4A8B-87B3-2C7D50B4BFDC}" Directory_="APPDIR" Attributes="256" KeyPath="_zfm.exe"/>
+    <ROW Component="_7zg.exe" ComponentId="{43F11636-21EF-4AE6-91BD-747978B43DBB}" Directory_="APPDIR" Attributes="256" KeyPath="_zg.exe"/>
+    <ROW Component="_7zip.chm" ComponentId="{82AF7DAA-4009-4121-A9C9-5755ACDA5051}" Directory_="APPDIR" Attributes="256" KeyPath="__zip.chm" Type="1"/>
+    <ROW Component="_7zip.dll_COM" ComponentId="{4E2B5E22-0984-46BF-A24C-63FC113A574F}" Directory_="APPDIR" Attributes="256" KeyPath="__zip.dll"/>
+    <ROW Component="_7zip32.dll" ComponentId="{819BF456-8A9B-4E84-9F38-DD29992C3C1A}" Directory_="APPDIR" Attributes="256" KeyPath="__zip32.dll"/>
+    <ROW Component="af.txt" ComponentId="{865CBE53-CE14-48ED-830A-0B9914AEBB93}" Directory_="LANG" Attributes="256" KeyPath="af.txt"/>
+    <ROW Component="an.txt" ComponentId="{994EA309-2D66-408F-891A-1CF9B5D65171}" Directory_="LANG" Attributes="256" KeyPath="an.txt"/>
+    <ROW Component="ar.txt" ComponentId="{89FCAA03-DB8B-41E8-B567-4A2D44EF3D16}" Directory_="LANG" Attributes="256" KeyPath="ar.txt"/>
+    <ROW Component="ast.txt" ComponentId="{CCF9ACCA-8247-4DBF-BA49-4547B72C6DF1}" Directory_="LANG" Attributes="256" KeyPath="ast.txt"/>
+    <ROW Component="az.txt" ComponentId="{4430E439-0D1A-4729-B542-158EB00D0B48}" Directory_="LANG" Attributes="256" KeyPath="az.txt"/>
+    <ROW Component="ba.txt" ComponentId="{B9A2D1F4-4153-477A-B579-92FEAD0CE182}" Directory_="LANG" Attributes="256" KeyPath="ba.txt"/>
+    <ROW Component="be.txt" ComponentId="{2340EEDC-399D-46F1-93B4-550282064525}" Directory_="LANG" Attributes="256" KeyPath="be.txt"/>
+    <ROW Component="bg.txt" ComponentId="{5FDBED9E-4A7B-443B-8AD9-EDD614F09F9F}" Directory_="LANG" Attributes="256" KeyPath="bg.txt"/>
+    <ROW Component="bn.txt" ComponentId="{B2E4E10D-B8B4-458B-B204-B78A45D9B095}" Directory_="LANG" Attributes="256" KeyPath="bn.txt"/>
+    <ROW Component="br.txt" ComponentId="{E0FE5BD4-5599-4464-8118-87558A584DB5}" Directory_="LANG" Attributes="256" KeyPath="br.txt"/>
+    <ROW Component="ca.txt" ComponentId="{4DDD2361-FB44-4D38-88F0-506C0496D74E}" Directory_="LANG" Attributes="256" KeyPath="ca.txt"/>
+    <ROW Component="co.txt" ComponentId="{94778ED9-F93D-46BA-AC4F-4B40A7C28917}" Directory_="LANG" Attributes="256" KeyPath="co.txt"/>
+    <ROW Component="cs.txt" ComponentId="{91EEB313-81DB-4721-B239-2663589AE732}" Directory_="LANG" Attributes="256" KeyPath="cs.txt"/>
+    <ROW Component="cy.txt" ComponentId="{6CA38EF8-A9CF-42C2-9A7C-9A90D81444F5}" Directory_="LANG" Attributes="256" KeyPath="cy.txt"/>
+    <ROW Component="da.txt" ComponentId="{1FD77B2A-EF52-4534-B3E6-D53F809B95FB}" Directory_="LANG" Attributes="256" KeyPath="da.txt"/>
+    <ROW Component="de.txt" ComponentId="{D1A3A622-FC3D-45BC-836B-97DBB253B635}" Directory_="LANG" Attributes="256" KeyPath="de.txt"/>
+    <ROW Component="el.txt" ComponentId="{E5EA186D-2548-4203-991A-C0215F9FBA1D}" Directory_="LANG" Attributes="256" KeyPath="el.txt"/>
+    <ROW Component="eo.txt" ComponentId="{23A5184C-B732-4E69-9205-2E9CA558BB3F}" Directory_="LANG" Attributes="256" KeyPath="eo.txt"/>
+    <ROW Component="es.txt" ComponentId="{DD43757A-E873-46D6-9796-CF1B8E4140F2}" Directory_="LANG" Attributes="256" KeyPath="es.txt"/>
+    <ROW Component="et.txt" ComponentId="{8C5968C7-338F-401B-AA72-6C2F24558B3B}" Directory_="LANG" Attributes="256" KeyPath="et.txt"/>
+    <ROW Component="eu.txt" ComponentId="{56C11117-91C1-455D-A363-4B61B327F6E2}" Directory_="LANG" Attributes="256" KeyPath="eu.txt"/>
+    <ROW Component="ext.txt" ComponentId="{9ABCAC3B-F299-4F20-811D-53D738C8954D}" Directory_="LANG" Attributes="256" KeyPath="ext.txt"/>
+    <ROW Component="fa.txt" ComponentId="{D51DB4D6-F16E-48F5-BFBA-501AC15211B7}" Directory_="LANG" Attributes="256" KeyPath="fa.txt"/>
+    <ROW Component="fi.txt" ComponentId="{AB55A0C1-3A2D-4095-AD8D-276F2419AF73}" Directory_="LANG" Attributes="256" KeyPath="fi.txt"/>
+    <ROW Component="fr.txt" ComponentId="{B0746099-E685-49C2-A623-8B5B14F90083}" Directory_="LANG" Attributes="256" KeyPath="fr.txt"/>
+    <ROW Component="fur.txt" ComponentId="{4A317DB3-8A6B-42EC-939A-E0207B3CA14B}" Directory_="LANG" Attributes="256" KeyPath="fur.txt"/>
+    <ROW Component="fy.txt" ComponentId="{40BC274D-5453-4238-84AD-2B81630A8B97}" Directory_="LANG" Attributes="256" KeyPath="fy.txt"/>
+    <ROW Component="ga.txt" ComponentId="{823E0EF1-5429-4D92-ADF5-89C77C7AFFF1}" Directory_="LANG" Attributes="256" KeyPath="ga.txt"/>
+    <ROW Component="gl.txt" ComponentId="{7EF77092-B4FF-409E-A764-0F408D7832B6}" Directory_="LANG" Attributes="256" KeyPath="gl.txt"/>
+    <ROW Component="gu.txt" ComponentId="{EDF3AF47-19E6-4510-BFD6-D8647A4A6F59}" Directory_="LANG" Attributes="256" KeyPath="gu.txt"/>
+    <ROW Component="he.txt" ComponentId="{97AC3441-5374-47B9-AFE7-FC0AFB334070}" Directory_="LANG" Attributes="256" KeyPath="he.txt"/>
+    <ROW Component="hi.txt" ComponentId="{80C60FC1-FEC8-47A2-A2A5-94911D3D35FC}" Directory_="LANG" Attributes="256" KeyPath="hi.txt"/>
+    <ROW Component="history.txt" ComponentId="{54CD752F-0F62-4F13-B635-D1A61A8A8D19}" Directory_="APPDIR" Attributes="256" KeyPath="history.txt"/>
+    <ROW Component="hr.txt" ComponentId="{9D6AD3BA-EA9D-4D69-A653-5300ACEABEF8}" Directory_="LANG" Attributes="256" KeyPath="hr.txt"/>
+    <ROW Component="hu.txt" ComponentId="{1AC8DF25-855B-4582-A66A-632410AF59BE}" Directory_="LANG" Attributes="256" KeyPath="hu.txt"/>
+    <ROW Component="hy.txt" ComponentId="{D12E8AE4-8299-4432-BC2F-95FE34FC20E2}" Directory_="LANG" Attributes="256" KeyPath="hy.txt"/>
+    <ROW Component="id.txt" ComponentId="{14DFCD8D-7CA1-4EEE-A4CB-C06910D393CE}" Directory_="LANG" Attributes="256" KeyPath="id.txt"/>
+    <ROW Component="io.txt" ComponentId="{29BCAC7D-6A11-41BC-80FD-56BF3E8EB2BB}" Directory_="LANG" Attributes="256" KeyPath="io.txt"/>
+    <ROW Component="is.txt" ComponentId="{EBDBED84-0B08-491A-B45A-96682C198B0A}" Directory_="LANG" Attributes="256" KeyPath="is.txt"/>
+    <ROW Component="it.txt" ComponentId="{3B73CDD8-76DD-4562-AA0E-439CA8AAF12C}" Directory_="LANG" Attributes="256" KeyPath="it.txt"/>
+    <ROW Component="ja.txt" ComponentId="{CBCD6313-D2D9-4CB5-B183-686999F52CB9}" Directory_="LANG" Attributes="256" KeyPath="ja.txt"/>
+    <ROW Component="ka.txt" ComponentId="{6C46543E-67AF-45D8-BC06-B39E771ACE9C}" Directory_="LANG" Attributes="256" KeyPath="ka.txt"/>
+    <ROW Component="kaa.txt" ComponentId="{C0402C55-61EB-419E-B139-8693CEF5CC21}" Directory_="LANG" Attributes="256" KeyPath="kaa.txt"/>
+    <ROW Component="kab.txt" ComponentId="{85CD1CC1-CD28-40B6-95EA-CCC6817B22F8}" Directory_="LANG" Attributes="256" KeyPath="kab.txt"/>
+    <ROW Component="kk.txt" ComponentId="{F51E64F2-A953-4B0A-8878-0B766BE5CCAA}" Directory_="LANG" Attributes="256" KeyPath="kk.txt"/>
+    <ROW Component="ko.txt" ComponentId="{8284597A-7272-4F46-A27C-030732F6931C}" Directory_="LANG" Attributes="256" KeyPath="ko.txt"/>
+    <ROW Component="ku.txt" ComponentId="{892BBE88-70F8-46A5-9DFD-15502431A51D}" Directory_="LANG" Attributes="256" KeyPath="ku.txt"/>
+    <ROW Component="kuckb.txt" ComponentId="{63BABA8B-8F1F-4A0D-8650-5FA10FA308F8}" Directory_="LANG" Attributes="256" KeyPath="ku_ckb.txt"/>
+    <ROW Component="ky.txt" ComponentId="{64DF1DC7-2D35-4B0E-B79C-50632451B08D}" Directory_="LANG" Attributes="256" KeyPath="ky.txt"/>
+    <ROW Component="license.txt" ComponentId="{AAD9447F-07FB-4042-A0A6-FE5BB0760413}" Directory_="APPDIR" Attributes="256" KeyPath="license.txt"/>
+    <ROW Component="lij.txt" ComponentId="{A48DDB13-0684-4198-BE3E-913C52E063C5}" Directory_="LANG" Attributes="256" KeyPath="lij.txt"/>
+    <ROW Component="lt.txt" ComponentId="{730AF2E3-011D-4B12-B9DD-87FCB3BD6A4D}" Directory_="LANG" Attributes="256" KeyPath="lt.txt"/>
+    <ROW Component="lv.txt" ComponentId="{EDB76FC9-241D-424B-B38D-63A9C673A669}" Directory_="LANG" Attributes="256" KeyPath="lv.txt"/>
+    <ROW Component="mk.txt" ComponentId="{AEB88880-E36D-4EBD-B12E-F11929AA1967}" Directory_="LANG" Attributes="256" KeyPath="mk.txt"/>
+    <ROW Component="mn.txt" ComponentId="{5679A8BA-3DDF-4D5D-9A91-E6661C7A8266}" Directory_="LANG" Attributes="256" KeyPath="mn.txt"/>
+    <ROW Component="mng.txt" ComponentId="{E3A75C05-FC78-4482-B61F-D74439C69966}" Directory_="LANG" Attributes="256" KeyPath="mng.txt"/>
+    <ROW Component="mng2.txt" ComponentId="{FBE64DC3-5B53-443C-98AD-227CAC5ACB0D}" Directory_="LANG" Attributes="256" KeyPath="mng2.txt"/>
+    <ROW Component="mr.txt" ComponentId="{EBE20DD6-719F-4775-A86D-E67934D5F161}" Directory_="LANG" Attributes="256" KeyPath="mr.txt"/>
+    <ROW Component="ms.txt" ComponentId="{287E1E91-DA42-48E8-9F28-4BF32005046F}" Directory_="LANG" Attributes="256" KeyPath="ms.txt"/>
+    <ROW Component="nb.txt" ComponentId="{8AEAD3EB-D066-4440-B682-66B7F14841D9}" Directory_="LANG" Attributes="256" KeyPath="nb.txt"/>
+    <ROW Component="ne.txt" ComponentId="{D839E905-946B-418A-888B-2BEF295A2E66}" Directory_="LANG" Attributes="256" KeyPath="ne.txt"/>
+    <ROW Component="nl.txt" ComponentId="{C79CAEAB-F26D-4CF8-8A29-47207B67AFE1}" Directory_="LANG" Attributes="256" KeyPath="nl.txt"/>
+    <ROW Component="nn.txt" ComponentId="{D6B2C13A-7681-455C-923E-665A69D1085A}" Directory_="LANG" Attributes="256" KeyPath="nn.txt"/>
+    <ROW Component="pain.txt" ComponentId="{86955766-E4C2-4C8F-80FA-37B5309C2B9C}" Directory_="LANG" Attributes="256" KeyPath="pa_in.txt"/>
+    <ROW Component="pl.txt" ComponentId="{9925117F-F7F5-4CFB-AB76-93AAC3FABFA1}" Directory_="LANG" Attributes="256" KeyPath="pl.txt"/>
+    <ROW Component="ps.txt" ComponentId="{FF4C4A12-38C4-487F-AD9C-DE8E2A19B655}" Directory_="LANG" Attributes="256" KeyPath="ps.txt"/>
+    <ROW Component="pt.txt" ComponentId="{D4FE1D55-A9F4-47E5-98C4-21468866D309}" Directory_="LANG" Attributes="256" KeyPath="pt.txt"/>
+    <ROW Component="ptbr.txt" ComponentId="{A518EACF-DDE8-4212-B554-5651846D93AB}" Directory_="LANG" Attributes="256" KeyPath="pt_br.txt"/>
+    <ROW Component="readme.txt" ComponentId="{E0A7EE94-DD5C-496E-A072-C9A2166FF5CF}" Directory_="APPDIR" Attributes="256" KeyPath="readme.txt"/>
+    <ROW Component="ro.txt" ComponentId="{14B10186-D6C0-4B99-B349-330B45CD7ABD}" Directory_="LANG" Attributes="256" KeyPath="ro.txt"/>
+    <ROW Component="ru.txt" ComponentId="{753EF0ED-5AD8-4B14-A820-0194EF0C48D6}" Directory_="LANG" Attributes="256" KeyPath="ru.txt"/>
+    <ROW Component="sa.txt" ComponentId="{0CE0A410-7C87-4FF6-9459-E551F9F6D9D1}" Directory_="LANG" Attributes="256" KeyPath="sa.txt"/>
+    <ROW Component="si.txt" ComponentId="{8751D75A-9CFF-4FD2-81D9-4EFB15558674}" Directory_="LANG" Attributes="256" KeyPath="si.txt"/>
+    <ROW Component="sk.txt" ComponentId="{0A878547-63D1-41E9-A7E5-DC924951A14D}" Directory_="LANG" Attributes="256" KeyPath="sk.txt"/>
+    <ROW Component="sl.txt" ComponentId="{1E4C45DB-BBC0-4E39-B43A-71C4B03D563D}" Directory_="LANG" Attributes="256" KeyPath="sl.txt"/>
+    <ROW Component="sq.txt" ComponentId="{811C995C-A6FD-4327-9159-F7AEC79A1165}" Directory_="LANG" Attributes="256" KeyPath="sq.txt"/>
+    <ROW Component="srspc.txt" ComponentId="{30A8F232-F627-449E-9E35-E42E6BAC3A16}" Directory_="LANG" Attributes="256" KeyPath="sr_spc.txt"/>
+    <ROW Component="srspl.txt" ComponentId="{D292AD23-E267-4D72-A9F0-DEA0B569B348}" Directory_="LANG" Attributes="256" KeyPath="sr_spl.txt"/>
+    <ROW Component="sv.txt" ComponentId="{B307FA51-C552-44A9-BEBC-6C78216A6E2F}" Directory_="LANG" Attributes="256" KeyPath="sv.txt"/>
+    <ROW Component="sw.txt" ComponentId="{B573503E-9AE3-4495-AEE7-476C233B570E}" Directory_="LANG" Attributes="256" KeyPath="sw.txt"/>
+    <ROW Component="ta.txt" ComponentId="{CAAA6D21-C34A-4FD1-BB94-150D27EAE24E}" Directory_="LANG" Attributes="256" KeyPath="ta.txt"/>
+    <ROW Component="tg.txt" ComponentId="{72D595D9-BA57-47C9-B5E8-71C42C51853F}" Directory_="LANG" Attributes="256" KeyPath="tg.txt"/>
+    <ROW Component="th.txt" ComponentId="{43321F28-1D14-4E68-8D90-6BD930206175}" Directory_="LANG" Attributes="256" KeyPath="th.txt"/>
+    <ROW Component="tk.txt" ComponentId="{A613BC19-76D6-4BF5-9A62-4CE32A9C6F3B}" Directory_="LANG" Attributes="256" KeyPath="tk.txt"/>
+    <ROW Component="tr.txt" ComponentId="{E8264A2D-E64D-4AAC-ADCD-014846BF63CF}" Directory_="LANG" Attributes="256" KeyPath="tr.txt"/>
+    <ROW Component="tt.txt" ComponentId="{8D7BD303-EBD6-4399-8EE7-BC6EFADBAF13}" Directory_="LANG" Attributes="256" KeyPath="tt.txt"/>
+    <ROW Component="ug.txt" ComponentId="{C2144CAE-048A-4FCA-91ED-D7261FA0B96C}" Directory_="LANG" Attributes="256" KeyPath="ug.txt"/>
+    <ROW Component="uk.txt" ComponentId="{2BAFC9B5-A634-4F35-94BA-F2259BA16E07}" Directory_="LANG" Attributes="256" KeyPath="uk.txt"/>
+    <ROW Component="uz.txt" ComponentId="{6290DA07-8848-4CA2-8857-8D468F305C34}" Directory_="LANG" Attributes="256" KeyPath="uz.txt"/>
+    <ROW Component="uzcyrl.txt" ComponentId="{3DB211B9-F1C7-43BC-8F8F-BBCDDBF6BCD5}" Directory_="LANG" Attributes="256" KeyPath="uz_cyrl.txt"/>
+    <ROW Component="va.txt" ComponentId="{3A804CA0-E8D6-4E03-A4BF-18140291A387}" Directory_="LANG" Attributes="256" KeyPath="va.txt"/>
+    <ROW Component="vi.txt" ComponentId="{A666A546-5F08-41B6-9EFB-233CA8E8A9F2}" Directory_="LANG" Attributes="256" KeyPath="vi.txt"/>
+    <ROW Component="yo.txt" ComponentId="{33FE49B4-D8AA-4DF3-9E45-AB7FCCEC37A6}" Directory_="LANG" Attributes="256" KeyPath="yo.txt"/>
+    <ROW Component="zhcn.txt" ComponentId="{F230E8AB-4AE5-4736-8739-CFABB4ADB13B}" Directory_="LANG" Attributes="256" KeyPath="zh_cn.txt"/>
+    <ROW Component="zhtw.txt" ComponentId="{8E7E81C8-A0EB-4716-AEF7-B34348933D7E}" Directory_="LANG" Attributes="256" KeyPath="zh_tw.txt"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ROW Feature="_7ZipFileManagerNewFeature" Title="_7ZipFileManagerNewFeature" Description="_7ZipFileManagerNewFeature" Display="2" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="__zip.chm" Component_="_7zip.chm" FileName="7-zip.chm" Attributes="0" SourcePath="Prog64\7-Zip\7-zip.chm" SelfReg="false"/>
+    <ROW File="__zip.dll" Component_="_7zip.dll_COM" FileName="7-zip.dll" Attributes="0" SourcePath="Prog64\7-Zip\7-zip.dll" SelfReg="false"/>
+    <ROW File="__zip32.dll" Component_="_7zip32.dll" FileName="7-zip32.dll" Attributes="0" SourcePath="Prog64\7-Zip\7-zip32.dll" SelfReg="false"/>
+    <ROW File="_z.dll" Component_="_7z.dll" FileName="7z.dll" Attributes="0" SourcePath="Prog64\7-Zip\7z.dll" SelfReg="false"/>
+    <ROW File="_z.exe" Component_="_7z.exe" FileName="7z.exe" Attributes="0" SourcePath="Prog64\7-Zip\7z.exe" SelfReg="false"/>
+    <ROW File="_z.sfx" Component_="Folder_7Zip" FileName="7z.sfx" Attributes="0" SourcePath="Prog64\7-Zip\7z.sfx" SelfReg="false"/>
+    <ROW File="_zcon.sfx" Component_="Folder_7Zip" FileName="7zCon.sfx" Attributes="0" SourcePath="Prog64\7-Zip\7zCon.sfx" SelfReg="false"/>
+    <ROW File="_zfm.exe" Component_="_7zfm.exe" FileName="7zFM.exe" Attributes="0" SourcePath="Prog64\7-Zip\7zFM.exe" SelfReg="false"/>
+    <ROW File="_zg.exe" Component_="_7zg.exe" FileName="7zG.exe" Attributes="0" SourcePath="Prog64\7-Zip\7zG.exe" SelfReg="false"/>
+    <ROW File="descript.ion" Component_="Folder_7Zip" FileName="descript.ion" Attributes="0" SourcePath="Prog64\7-Zip\descript.ion" SelfReg="false"/>
+    <ROW File="history.txt" Component_="history.txt" FileName="History.txt" Attributes="0" SourcePath="Prog64\7-Zip\History.txt" SelfReg="false"/>
+    <ROW File="license.txt" Component_="license.txt" FileName="License.txt" Attributes="0" SourcePath="Prog64\7-Zip\License.txt" SelfReg="false"/>
+    <ROW File="readme.txt" Component_="readme.txt" FileName="readme.txt" Attributes="0" SourcePath="Prog64\7-Zip\readme.txt" SelfReg="false"/>
+    <ROW File="af.txt" Component_="af.txt" FileName="af.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\af.txt" SelfReg="false"/>
+    <ROW File="an.txt" Component_="an.txt" FileName="an.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\an.txt" SelfReg="false"/>
+    <ROW File="ar.txt" Component_="ar.txt" FileName="ar.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ar.txt" SelfReg="false"/>
+    <ROW File="ast.txt" Component_="ast.txt" FileName="ast.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ast.txt" SelfReg="false"/>
+    <ROW File="az.txt" Component_="az.txt" FileName="az.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\az.txt" SelfReg="false"/>
+    <ROW File="ba.txt" Component_="ba.txt" FileName="ba.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ba.txt" SelfReg="false"/>
+    <ROW File="be.txt" Component_="be.txt" FileName="be.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\be.txt" SelfReg="false"/>
+    <ROW File="bg.txt" Component_="bg.txt" FileName="bg.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\bg.txt" SelfReg="false"/>
+    <ROW File="bn.txt" Component_="bn.txt" FileName="bn.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\bn.txt" SelfReg="false"/>
+    <ROW File="br.txt" Component_="br.txt" FileName="br.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\br.txt" SelfReg="false"/>
+    <ROW File="ca.txt" Component_="ca.txt" FileName="ca.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ca.txt" SelfReg="false"/>
+    <ROW File="co.txt" Component_="co.txt" FileName="co.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\co.txt" SelfReg="false"/>
+    <ROW File="cs.txt" Component_="cs.txt" FileName="cs.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\cs.txt" SelfReg="false"/>
+    <ROW File="cy.txt" Component_="cy.txt" FileName="cy.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\cy.txt" SelfReg="false"/>
+    <ROW File="da.txt" Component_="da.txt" FileName="da.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\da.txt" SelfReg="false"/>
+    <ROW File="de.txt" Component_="de.txt" FileName="de.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\de.txt" SelfReg="false"/>
+    <ROW File="el.txt" Component_="el.txt" FileName="el.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\el.txt" SelfReg="false"/>
+    <ROW File="en.ttt" Component_="Folder_Lang" FileName="en.ttt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\en.ttt" SelfReg="false"/>
+    <ROW File="eo.txt" Component_="eo.txt" FileName="eo.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\eo.txt" SelfReg="false"/>
+    <ROW File="es.txt" Component_="es.txt" FileName="es.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\es.txt" SelfReg="false"/>
+    <ROW File="et.txt" Component_="et.txt" FileName="et.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\et.txt" SelfReg="false"/>
+    <ROW File="eu.txt" Component_="eu.txt" FileName="eu.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\eu.txt" SelfReg="false"/>
+    <ROW File="ext.txt" Component_="ext.txt" FileName="ext.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ext.txt" SelfReg="false"/>
+    <ROW File="fa.txt" Component_="fa.txt" FileName="fa.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\fa.txt" SelfReg="false"/>
+    <ROW File="fi.txt" Component_="fi.txt" FileName="fi.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\fi.txt" SelfReg="false"/>
+    <ROW File="fr.txt" Component_="fr.txt" FileName="fr.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\fr.txt" SelfReg="false"/>
+    <ROW File="fur.txt" Component_="fur.txt" FileName="fur.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\fur.txt" SelfReg="false"/>
+    <ROW File="fy.txt" Component_="fy.txt" FileName="fy.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\fy.txt" SelfReg="false"/>
+    <ROW File="ga.txt" Component_="ga.txt" FileName="ga.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ga.txt" SelfReg="false"/>
+    <ROW File="gl.txt" Component_="gl.txt" FileName="gl.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\gl.txt" SelfReg="false"/>
+    <ROW File="gu.txt" Component_="gu.txt" FileName="gu.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\gu.txt" SelfReg="false"/>
+    <ROW File="he.txt" Component_="he.txt" FileName="he.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\he.txt" SelfReg="false"/>
+    <ROW File="hi.txt" Component_="hi.txt" FileName="hi.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\hi.txt" SelfReg="false"/>
+    <ROW File="hr.txt" Component_="hr.txt" FileName="hr.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\hr.txt" SelfReg="false"/>
+    <ROW File="hu.txt" Component_="hu.txt" FileName="hu.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\hu.txt" SelfReg="false"/>
+    <ROW File="hy.txt" Component_="hy.txt" FileName="hy.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\hy.txt" SelfReg="false"/>
+    <ROW File="id.txt" Component_="id.txt" FileName="id.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\id.txt" SelfReg="false"/>
+    <ROW File="io.txt" Component_="io.txt" FileName="io.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\io.txt" SelfReg="false"/>
+    <ROW File="is.txt" Component_="is.txt" FileName="is.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\is.txt" SelfReg="false"/>
+    <ROW File="it.txt" Component_="it.txt" FileName="it.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\it.txt" SelfReg="false"/>
+    <ROW File="ja.txt" Component_="ja.txt" FileName="ja.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ja.txt" SelfReg="false"/>
+    <ROW File="ka.txt" Component_="ka.txt" FileName="ka.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ka.txt" SelfReg="false"/>
+    <ROW File="kaa.txt" Component_="kaa.txt" FileName="kaa.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\kaa.txt" SelfReg="false"/>
+    <ROW File="kab.txt" Component_="kab.txt" FileName="kab.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\kab.txt" SelfReg="false"/>
+    <ROW File="kk.txt" Component_="kk.txt" FileName="kk.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\kk.txt" SelfReg="false"/>
+    <ROW File="ko.txt" Component_="ko.txt" FileName="ko.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ko.txt" SelfReg="false"/>
+    <ROW File="ku_ckb.txt" Component_="kuckb.txt" FileName="ku-ckb.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ku-ckb.txt" SelfReg="false"/>
+    <ROW File="ku.txt" Component_="ku.txt" FileName="ku.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ku.txt" SelfReg="false"/>
+    <ROW File="ky.txt" Component_="ky.txt" FileName="ky.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ky.txt" SelfReg="false"/>
+    <ROW File="lij.txt" Component_="lij.txt" FileName="lij.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\lij.txt" SelfReg="false"/>
+    <ROW File="lt.txt" Component_="lt.txt" FileName="lt.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\lt.txt" SelfReg="false"/>
+    <ROW File="lv.txt" Component_="lv.txt" FileName="lv.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\lv.txt" SelfReg="false"/>
+    <ROW File="mk.txt" Component_="mk.txt" FileName="mk.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\mk.txt" SelfReg="false"/>
+    <ROW File="mn.txt" Component_="mn.txt" FileName="mn.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\mn.txt" SelfReg="false"/>
+    <ROW File="mng.txt" Component_="mng.txt" FileName="mng.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\mng.txt" SelfReg="false"/>
+    <ROW File="mng2.txt" Component_="mng2.txt" FileName="mng2.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\mng2.txt" SelfReg="false"/>
+    <ROW File="mr.txt" Component_="mr.txt" FileName="mr.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\mr.txt" SelfReg="false"/>
+    <ROW File="ms.txt" Component_="ms.txt" FileName="ms.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ms.txt" SelfReg="false"/>
+    <ROW File="nb.txt" Component_="nb.txt" FileName="nb.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\nb.txt" SelfReg="false"/>
+    <ROW File="ne.txt" Component_="ne.txt" FileName="ne.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ne.txt" SelfReg="false"/>
+    <ROW File="nl.txt" Component_="nl.txt" FileName="nl.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\nl.txt" SelfReg="false"/>
+    <ROW File="nn.txt" Component_="nn.txt" FileName="nn.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\nn.txt" SelfReg="false"/>
+    <ROW File="pa_in.txt" Component_="pain.txt" FileName="pa-in.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\pa-in.txt" SelfReg="false"/>
+    <ROW File="pl.txt" Component_="pl.txt" FileName="pl.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\pl.txt" SelfReg="false"/>
+    <ROW File="ps.txt" Component_="ps.txt" FileName="ps.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ps.txt" SelfReg="false"/>
+    <ROW File="pt_br.txt" Component_="ptbr.txt" FileName="pt-br.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\pt-br.txt" SelfReg="false"/>
+    <ROW File="pt.txt" Component_="pt.txt" FileName="pt.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\pt.txt" SelfReg="false"/>
+    <ROW File="ro.txt" Component_="ro.txt" FileName="ro.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ro.txt" SelfReg="false"/>
+    <ROW File="ru.txt" Component_="ru.txt" FileName="ru.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ru.txt" SelfReg="false"/>
+    <ROW File="sa.txt" Component_="sa.txt" FileName="sa.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\sa.txt" SelfReg="false"/>
+    <ROW File="si.txt" Component_="si.txt" FileName="si.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\si.txt" SelfReg="false"/>
+    <ROW File="sk.txt" Component_="sk.txt" FileName="sk.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\sk.txt" SelfReg="false"/>
+    <ROW File="sl.txt" Component_="sl.txt" FileName="sl.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\sl.txt" SelfReg="false"/>
+    <ROW File="sq.txt" Component_="sq.txt" FileName="sq.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\sq.txt" SelfReg="false"/>
+    <ROW File="sr_spc.txt" Component_="srspc.txt" FileName="sr-spc.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\sr-spc.txt" SelfReg="false"/>
+    <ROW File="sr_spl.txt" Component_="srspl.txt" FileName="sr-spl.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\sr-spl.txt" SelfReg="false"/>
+    <ROW File="sv.txt" Component_="sv.txt" FileName="sv.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\sv.txt" SelfReg="false"/>
+    <ROW File="sw.txt" Component_="sw.txt" FileName="sw.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\sw.txt" SelfReg="false"/>
+    <ROW File="ta.txt" Component_="ta.txt" FileName="ta.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ta.txt" SelfReg="false"/>
+    <ROW File="tg.txt" Component_="tg.txt" FileName="tg.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\tg.txt" SelfReg="false"/>
+    <ROW File="th.txt" Component_="th.txt" FileName="th.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\th.txt" SelfReg="false"/>
+    <ROW File="tk.txt" Component_="tk.txt" FileName="tk.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\tk.txt" SelfReg="false"/>
+    <ROW File="tr.txt" Component_="tr.txt" FileName="tr.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\tr.txt" SelfReg="false"/>
+    <ROW File="tt.txt" Component_="tt.txt" FileName="tt.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\tt.txt" SelfReg="false"/>
+    <ROW File="ug.txt" Component_="ug.txt" FileName="ug.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\ug.txt" SelfReg="false"/>
+    <ROW File="uk.txt" Component_="uk.txt" FileName="uk.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\uk.txt" SelfReg="false"/>
+    <ROW File="uz_cyrl.txt" Component_="uzcyrl.txt" FileName="uz-cyrl.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\uz-cyrl.txt" SelfReg="false"/>
+    <ROW File="uz.txt" Component_="uz.txt" FileName="uz.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\uz.txt" SelfReg="false"/>
+    <ROW File="va.txt" Component_="va.txt" FileName="va.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\va.txt" SelfReg="false"/>
+    <ROW File="vi.txt" Component_="vi.txt" FileName="vi.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\vi.txt" SelfReg="false"/>
+    <ROW File="yo.txt" Component_="yo.txt" FileName="yo.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\yo.txt" SelfReg="false"/>
+    <ROW File="zh_cn.txt" Component_="zhcn.txt" FileName="zh-cn.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\zh-cn.txt" SelfReg="false"/>
+    <ROW File="zh_tw.txt" Component_="zhtw.txt" FileName="zh-tw.txt" Attributes="0" SourcePath="Prog64\7-Zip\Lang\zh-tw.txt" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.InstallShieldComponent">
+    <ROW Property="Type" Value="MSI"/>
+    <ROW Property="ActiveLanguage" Value="1033"/>
+    <ROW Property="Comments"/>
+    <ROW Property="ISCompilerOption_CompileBeforeBuild" Value="1"/>
+    <ROW Property="ISCompilerOption_Debug" Value="0"/>
+    <ROW Property="ISCompilerOption_IncludePath"/>
+    <ROW Property="ISCompilerOption_MaxErrors" Value="50"/>
+    <ROW Property="ISCompilerOption_MaxWarnings" Value="50"/>
+    <ROW Property="ISCompilerOption_OutputPath" Value="&lt;ISProjectDataFolder&gt;\Script Files"/>
+    <ROW Property="ISCompilerOption_PreProcessor" Value="_ISSCRIPT_NEW_STYLE_DLG_DEFS"/>
+    <ROW Property="ISCompilerOption_WarningLevel" Value="3"/>
+    <ROW Property="ISCompilerOption_WarningsAsErrors" Value="1"/>
+    <ROW Property="MsiExecCmdLineOptions"/>
+    <ROW Property="MsiLogFile"/>
+    <ROW Property="OnUpgrade" Value="1"/>
+    <ROW Property="Owner"/>
+    <ROW Property="PatchFamily" Value="MyPatchFamily1"/>
+    <ROW Property="PatchSequence" Value="1.0.0"/>
+    <ROW Property="SccEnabled" Value="0"/>
+    <ROW Property="SccPath"/>
+    <ROW Property="SchemaVersion" Value="786"/>
+    <ROW Property="ISTheme" Value="InstallShield Blue.theme"/>
+    <ROW Property="ISCompilerOption_LibraryPath"/>
+    <ROW Property="LockPermissionMode" Value="1"/>
+    <ROW Property="EnableSwidtag" Value="0"/>
+    <ROW Property="ISUpdateNotifications" Value="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
+    <ROW Name="SOURCEFILEPATH" Path="." Type="2" Content="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="." PackageFileName="7 Zip 23.01" Languages="en" InstallationType="4" UseLargeSchema="true" MsiPackageType="x64"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="Themes.aip" Path="&lt;AI_FRAGS&gt;Themes.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="ISLockPermissionsCost" Description="Gathering permissions information for objects..."/>
+    <ROW Action="ISLockPermissionsInstall" Description="Applying permissions information for objects..."/>
+    <ROW Action="caCreateVRoots" Description="Creating IIS Virtual Roots..."/>
+    <ROW Action="caRemoveVRoots" Description="Removing IIS Virtual Roots..."/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="nopicture.jpg" SourcePath="..\..\..\..\..\..\..\Program Files (x86)\Caphyon\Advanced Installer 23.0\resources\no-picture.jpg"/>
+    <ATTRIBUTE name="DeletedRows" value="cmdlinkarrow"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCheckBoxComponent">
+    <ROW Property="ISSHOWMSILOG" Value="[~]"/>
+    <ROW Property="ISSHOWMSILOG_1" Value="[~]"/>
+    <ROW Property="LAUNCHREADME" Value="[~]"/>
+    <ROW Property="ISSHOWMSILOG_2" Value="[~]"/>
+    <ROW Property="ISCHECKFORPRODUCTUPDATES" Value="1"/>
+    <ROW Property="LAUNCHPROGRAM" Value="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiClassComponent">
+    <ROW CLSID="{23170F69-40C1-278A-1000-000100020000}" Context="InprocServer32" Component_="_7zip.dll_COM" Description="7-Zip Shell Extension" Feature_="_7ZipFileManagerNewFeature" Attributes="0" RegPathVariation="[COM_PROP_64]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="AdminChangeFolder" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="AdminChangeFolder" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Change Current Destination Folder" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="AdminChangeFolder" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Browse to the destination folder." Order="300"/>
+    <ROW Dialog_="AdminChangeFolder" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="AdminChangeFolder" Control="ComboText" Type="Text" X="21" Y="50" Width="99" Height="14" Attributes="3" Text="&amp;Look in:" Order="500"/>
+    <ROW Dialog_="AdminChangeFolder" Control="Up" Type="PushButton" X="310" Y="66" Width="19" Height="19" Attributes="3670019" Text="nopicture.jpg" Help="##IDS__IsAdminInstallBrowse_UpOneLevel##" Order="600"/>
+    <ROW Dialog_="AdminChangeFolder" Control="NewFolder" Type="PushButton" X="335" Y="66" Width="19" Height="19" Attributes="3670019" Text="nopicture.jpg" Help="##IDS__IsAdminInstallBrowse_CreateFolder##" Order="700"/>
+    <ROW Dialog_="AdminChangeFolder" Control="Combo" Type="DirectoryCombo" X="21" Y="64" Width="277" Height="80" Attributes="458755" Property="TARGETDIR" Text="##IDS__IsAdminInstallBrowse_4##" Order="800"/>
+    <ROW Dialog_="AdminChangeFolder" Control="List" Type="DirectoryList" X="21" Y="90" Width="332" Height="97" Attributes="7" Property="TARGETDIR" Text="##IDS__IsAdminInstallBrowse_8##" Order="900"/>
+    <ROW Dialog_="AdminChangeFolder" Control="TailText" Type="Text" X="21" Y="193" Width="99" Height="13" Attributes="3" Text="&amp;Folder name:" Order="1000"/>
+    <ROW Dialog_="AdminChangeFolder" Control="Tail" Type="PathEdit" X="21" Y="207" Width="332" Height="17" Attributes="3" Property="TARGETDIR" Text="##IDS__IsAdminInstallBrowse_11##" Order="1100"/>
+    <ROW Dialog_="AdminChangeFolder" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="1200"/>
+    <ROW Dialog_="AdminChangeFolder" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1300"/>
+    <ROW Dialog_="AdminChangeFolder" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1400"/>
+    <ROW Dialog_="AdminChangeFolder" Control="OK" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="OK" Order="1500"/>
+    <ROW Dialog_="AdminChangeFolder" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1600"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Network Location" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Specify a network location for the server image of the product." Order="300"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="DlgText" Type="Text" X="21" Y="51" Width="326" Height="40" Attributes="131075" Text="Enter the network location or click Change to browse to a location.  Click Install to create a server image of [ProductName] at the specified network location or click Cancel to exit the wizard." Order="500"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="LBBrowse" Type="Text" X="21" Y="90" Width="100" Height="10" Attributes="3" Text="&amp;Network location:" Order="600"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="SetupPathEdit" Type="PathEdit" X="21" Y="102" Width="330" Height="17" Attributes="3" Property="TARGETDIR" Order="700"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="Browse" Type="PushButton" X="286" Y="124" Width="66" Height="17" Attributes="3" Text="&amp;Change..." Order="800"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="900"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1000"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1100"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1200"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="InstallNow" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Install" Order="1300"/>
+    <ROW Dialog_="AdminNetworkLocation" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1400"/>
+    <ROW Dialog_="AdminWelcome" Control="Image" Type="Bitmap" X="0" Y="0" Width="374" Height="234" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="AdminWelcome" Control="TextLine1" Type="Text" X="135" Y="8" Width="225" Height="45" Attributes="196611" Text="Welcome to the InstallShield Wizard for [ProductName]" TextStyle="TahomaBold10" Order="200"/>
+    <ROW Dialog_="AdminWelcome" Control="TextLine2" Type="Text" X="135" Y="55" Width="228" Height="45" Attributes="196611" Text="The InstallShield(R) Wizard will create a server image of [ProductName] at a specified network location. To continue, click Next." Order="300"/>
+    <ROW Dialog_="AdminWelcome" Control="DlgLine" Type="Line" X="0" Y="234" Width="326" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="AdminWelcome" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="500"/>
+    <ROW Dialog_="AdminWelcome" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="600"/>
+    <ROW Dialog_="AdminWelcome" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="700"/>
+    <ROW Dialog_="CancelSetup" Control="Icon" Type="Icon" X="15" Y="15" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="CancelSetup" Control="Text" Type="Text" X="48" Y="15" Width="194" Height="30" Attributes="131075" Text="Are you sure you want to cancel [ProductName] installation?" Order="200"/>
+    <ROW Dialog_="CancelSetup" Control="Yes" Type="PushButton" X="62" Y="57" Width="66" Height="17" Attributes="3" Text="&amp;Yes" Order="300"/>
+    <ROW Dialog_="CancelSetup" Control="No" Type="PushButton" X="135" Y="57" Width="66" Height="17" Attributes="3" Text="&amp;No" Order="400"/>
+    <ROW Dialog_="CustomSetup" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="CustomSetup" Control="DlgTitle" Type="Text" X="9" Y="6" Width="292" Height="25" Attributes="65539" Text="Custom Setup" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="CustomSetup" Control="DlgDesc" Type="Text" X="17" Y="23" Width="292" Height="25" Attributes="65539" Text="Select the program features you want installed." Order="300"/>
+    <ROW Dialog_="CustomSetup" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="CustomSetup" Control="DlgText" Type="Text" X="9" Y="51" Width="360" Height="10" Attributes="3" Text="Click on an icon in the list below to change how a feature is installed." Order="500"/>
+    <ROW Dialog_="CustomSetup" Control="Tree" Type="SelectionTree" X="8" Y="70" Width="220" Height="118" Attributes="7" Property="_BrowseProperty" Order="600"/>
+    <ROW Dialog_="CustomSetup" Control="FeatureGroup" Type="GroupBox" X="235" Y="67" Width="131" Height="120" Attributes="1" Text="Feature Description" Order="700"/>
+    <ROW Dialog_="CustomSetup" Control="ItemDescription" Type="Text" X="241" Y="80" Width="120" Height="50" Attributes="3" Text="Multiline description of the currently selected item" Order="800"/>
+    <ROW Dialog_="CustomSetup" Control="Size" Type="Text" X="241" Y="133" Width="120" Height="50" Attributes="3" Text="Feature size" Order="900"/>
+    <ROW Dialog_="CustomSetup" Control="InstallLabel" Type="Text" X="8" Y="190" Width="360" Height="10" Attributes="3" Text="Install to:" Order="1000"/>
+    <ROW Dialog_="CustomSetup" Control="Location" Type="Text" X="8" Y="203" Width="291" Height="20" Attributes="3" Text="&lt;selected feature path&gt;" Order="1100"/>
+    <ROW Dialog_="CustomSetup" Control="ChangeFolder" Type="PushButton" X="301" Y="203" Width="66" Height="17" Attributes="3" Text="&amp;Change..." Order="1200"/>
+    <ROW Dialog_="CustomSetup" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="1300"/>
+    <ROW Dialog_="CustomSetup" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1400"/>
+    <ROW Dialog_="CustomSetup" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1500"/>
+    <ROW Dialog_="CustomSetup" Control="Help" Type="PushButton" X="22" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Help" Order="1600"/>
+    <ROW Dialog_="CustomSetup" Control="Details" Type="PushButton" X="93" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Space" Order="1700"/>
+    <ROW Dialog_="CustomSetup" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1800"/>
+    <ROW Dialog_="CustomSetup" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="1900"/>
+    <ROW Dialog_="CustomSetup" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="2000"/>
+    <ROW Dialog_="CustomSetupTips" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="CustomSetupTips" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Custom Setup Tips" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="CustomSetupTips" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Custom Setup allows you to selectively install program features." Order="300"/>
+    <ROW Dialog_="CustomSetupTips" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="CustomSetupTips" Control="InstallStateMenu" Type="Icon" X="21" Y="52" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="500"/>
+    <ROW Dialog_="CustomSetupTips" Control="MenuText" Type="Text" X="50" Y="52" Width="300" Height="36" Attributes="3" Text="The icon next to the feature name indicates the install state of the feature. Click the icon to drop down the install state menu for each feature." Order="600"/>
+    <ROW Dialog_="CustomSetupTips" Control="InstallStateText" Type="Text" X="21" Y="91" Width="300" Height="10" Attributes="3" Text="This install state means the feature..." Order="700"/>
+    <ROW Dialog_="CustomSetupTips" Control="Install" Type="Icon" X="21" Y="105" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="800"/>
+    <ROW Dialog_="CustomSetupTips" Control="InstallText" Type="Text" X="60" Y="105" Width="300" Height="20" Attributes="3" Text="Will be completely installed to the local hard drive." Order="900"/>
+    <ROW Dialog_="CustomSetupTips" Control="InstallPartial" Type="Icon" X="21" Y="130" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="1000"/>
+    <ROW Dialog_="CustomSetupTips" Control="PartialText" Type="Text" X="60" Y="130" Width="300" Height="20" Attributes="3" Text="Will have some subfeatures installed to the local hard drive. (Available only if the feature has subfeatures.)" Order="1100"/>
+    <ROW Dialog_="CustomSetupTips" Control="DontInstall" Type="Icon" X="21" Y="155" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="1200"/>
+    <ROW Dialog_="CustomSetupTips" Control="DontInstallText" Type="Text" X="60" Y="155" Width="300" Height="20" Attributes="3" Text="Will not be installed." Order="1300"/>
+    <ROW Dialog_="CustomSetupTips" Control="InstallFirstUse" Type="Icon" X="21" Y="180" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="1400"/>
+    <ROW Dialog_="CustomSetupTips" Control="FirstInstallText" Type="Text" X="60" Y="180" Width="300" Height="20" Attributes="3" Text="Will be installed on first use. (Available only if the feature supports this option.)" Order="1500"/>
+    <ROW Dialog_="CustomSetupTips" Control="NetworkInstall" Type="Icon" X="21" Y="205" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="1600"/>
+    <ROW Dialog_="CustomSetupTips" Control="NetworkInstallText" Type="Text" X="60" Y="205" Width="300" Height="20" Attributes="3" Text="Will be installed to run from the network. (Available only if the feature supports this option.)" Order="1700"/>
+    <ROW Dialog_="CustomSetupTips" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="1800"/>
+    <ROW Dialog_="CustomSetupTips" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1900"/>
+    <ROW Dialog_="CustomSetupTips" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="2000"/>
+    <ROW Dialog_="CustomSetupTips" Control="OK" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="OK" Order="2100"/>
+    <ROW Dialog_="CustomerInformation" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="CustomerInformation" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Customer Information" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="CustomerInformation" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Please enter your information." Order="300"/>
+    <ROW Dialog_="CustomerInformation" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="CustomerInformation" Control="NameLabel" Type="Text" X="21" Y="52" Width="75" Height="10" Attributes="3" Text="&amp;User Name:" Order="500"/>
+    <ROW Dialog_="CustomerInformation" Control="NameEdit" Type="Edit" X="21" Y="63" Width="237" Height="17" Attributes="3" Property="USERNAME" Text="{50}" TextStyle="Tahoma8" Order="600"/>
+    <ROW Dialog_="CustomerInformation" Control="CompanyLabel" Type="Text" X="21" Y="89" Width="75" Height="10" Attributes="3" Text="&amp;Organization:" Order="700"/>
+    <ROW Dialog_="CustomerInformation" Control="CompanyEdit" Type="Edit" X="21" Y="100" Width="237" Height="17" Attributes="3" Property="COMPANYNAME" Text="{80}" TextStyle="Tahoma8" Order="800"/>
+    <ROW Dialog_="CustomerInformation" Control="SerialLabel" Type="Text" X="21" Y="127" Width="109" Height="10" Attributes="2" Text="&amp;Serial Number:" Order="900"/>
+    <ROW Dialog_="CustomerInformation" Control="SerialNumber" Type="MaskedEdit" X="21" Y="138" Width="237" Height="17" Attributes="2" Property="ISX_SERIALNUM" Order="1000"/>
+    <ROW Dialog_="CustomerInformation" Control="DlgRadioGroupText" Type="Text" X="21" Y="161" Width="300" Height="14" Attributes="3" Text="Install this application for:" Order="1100"/>
+    <ROW Dialog_="CustomerInformation" Control="RadioGroup" Type="RadioButtonGroup" X="63" Y="170" Width="300" Height="50" Attributes="3" Property="ApplicationUsers" Text="##IDS__IsRegisterUserDlg_16##" Order="1200"/>
+    <ROW Dialog_="CustomerInformation" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="1300"/>
+    <ROW Dialog_="CustomerInformation" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1400"/>
+    <ROW Dialog_="CustomerInformation" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1500"/>
+    <ROW Dialog_="CustomerInformation" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1600"/>
+    <ROW Dialog_="CustomerInformation" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="1700"/>
+    <ROW Dialog_="CustomerInformation" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1800"/>
+    <ROW Dialog_="DatabaseFolder" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="DatabaseFolder" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Database Folder" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="DatabaseFolder" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Click Next to install to this folder, or click Change to install to a different folder." Order="300"/>
+    <ROW Dialog_="DatabaseFolder" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="DatabaseFolder" Control="DatabaseFolder" Type="Icon" X="21" Y="52" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="500"/>
+    <ROW Dialog_="DatabaseFolder" Control="LocLabel" Type="Text" X="57" Y="52" Width="290" Height="10" Attributes="131075" Text="Install [ProductName] database to:" Order="600"/>
+    <ROW Dialog_="DatabaseFolder" Control="ChangeFolder" Type="PushButton" X="301" Y="65" Width="66" Height="17" Attributes="3" Text="&amp;Change..." Order="700"/>
+    <ROW Dialog_="DatabaseFolder" Control="Location" Type="Text" X="57" Y="65" Width="240" Height="40" Attributes="3" Property="_BrowseProperty" Text="[DATABASEDIR]" Order="800"/>
+    <ROW Dialog_="DatabaseFolder" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="900"/>
+    <ROW Dialog_="DatabaseFolder" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1000"/>
+    <ROW Dialog_="DatabaseFolder" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1100"/>
+    <ROW Dialog_="DatabaseFolder" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1200"/>
+    <ROW Dialog_="DatabaseFolder" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="1300"/>
+    <ROW Dialog_="DatabaseFolder" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1400"/>
+    <ROW Dialog_="DestinationFolder" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="DestinationFolder" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Destination Folder" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="DestinationFolder" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Click Next to install to this folder, or click Change to install to a different folder." Order="300"/>
+    <ROW Dialog_="DestinationFolder" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="DestinationFolder" Control="DestFolder" Type="Icon" X="21" Y="52" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="500"/>
+    <ROW Dialog_="DestinationFolder" Control="LocLabel" Type="Text" X="57" Y="52" Width="290" Height="10" Attributes="131075" Text="Install [ProductName] to:" Order="600"/>
+    <ROW Dialog_="DestinationFolder" Control="ChangeFolder" Type="PushButton" X="301" Y="65" Width="66" Height="17" Attributes="3" Text="&amp;Change..." Order="700"/>
+    <ROW Dialog_="DestinationFolder" Control="Location" Type="Text" X="57" Y="65" Width="240" Height="40" Attributes="3" Property="_BrowseProperty" Text="[INSTALLDIR]" Order="800"/>
+    <ROW Dialog_="DestinationFolder" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="900"/>
+    <ROW Dialog_="DestinationFolder" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1000"/>
+    <ROW Dialog_="DestinationFolder" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1100"/>
+    <ROW Dialog_="DestinationFolder" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1200"/>
+    <ROW Dialog_="DestinationFolder" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="1300"/>
+    <ROW Dialog_="DestinationFolder" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1400"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="DlgTitle" Type="Text" X="9" Y="6" Width="292" Height="25" Attributes="65539" Text="Disk Space Requirements" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="DlgDesc" Type="Text" X="17" Y="23" Width="292" Height="25" Attributes="65539" Text="The disk space required for the installation of the selected features." Order="300"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="List" Type="VolumeCostList" X="8" Y="55" Width="358" Height="125" Attributes="393223" Text="{120}{70}{70}{70}{70}" Order="500"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="DlgText" Type="Text" X="10" Y="185" Width="358" Height="41" Attributes="3" Text="The highlighted volumes do not have enough disk space available for the currently selected features. You can remove files from the highlighted volumes, choose to install fewer features onto local drives, or select different destination drives." Order="600"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="700"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="800"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="900"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control="OK" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="OK" Order="1000"/>
+    <ROW Dialog_="FilesInUse_1" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="FilesInUse_1" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Files in Use" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="FilesInUse_1" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Some files that need to be updated are currently in use." Order="300"/>
+    <ROW Dialog_="FilesInUse_1" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="FilesInUse_1" Control="DlgText" Type="Text" X="21" Y="51" Width="348" Height="33" Attributes="3" Text="The following applications are using files that need to be updated by this setup. Close these applications and click Retry to continue." Order="500"/>
+    <ROW Dialog_="FilesInUse_1" Control="List" Type="ListBox" X="21" Y="87" Width="331" Height="135" Attributes="7" Property="FileInUseProcess" Order="600"/>
+    <ROW Dialog_="FilesInUse_1" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="700"/>
+    <ROW Dialog_="FilesInUse_1" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="800"/>
+    <ROW Dialog_="FilesInUse_1" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="900"/>
+    <ROW Dialog_="FilesInUse_1" Control="Retry" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Retry" Order="1000"/>
+    <ROW Dialog_="FilesInUse_1" Control="Ignore" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Ignore" Order="1100"/>
+    <ROW Dialog_="FilesInUse_1" Control="Exit" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Exit" Order="1200"/>
+    <ROW Dialog_="InstallChangeFolder" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="InstallChangeFolder" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Change Current Destination Folder" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="InstallChangeFolder" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Browse to the destination folder." Order="300"/>
+    <ROW Dialog_="InstallChangeFolder" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="InstallChangeFolder" Control="ComboText" Type="Text" X="21" Y="50" Width="99" Height="14" Attributes="3" Text="&amp;Look in:" Order="500"/>
+    <ROW Dialog_="InstallChangeFolder" Control="Up" Type="PushButton" X="310" Y="66" Width="19" Height="19" Attributes="3670019" Text="nopicture.jpg" Help="##IDS__IsBrowseFolderDlg_UpOneLevel##" Order="600"/>
+    <ROW Dialog_="InstallChangeFolder" Control="NewFolder" Type="PushButton" X="335" Y="66" Width="19" Height="19" Attributes="3670019" Text="nopicture.jpg" Help="##IDS__IsBrowseFolderDlg_CreateFolder##" Order="700"/>
+    <ROW Dialog_="InstallChangeFolder" Control="Combo" Type="DirectoryCombo" X="21" Y="64" Width="277" Height="80" Attributes="4128779" Property="_BrowseProperty" Text="##IDS__IsBrowseFolderDlg_4##" Order="800"/>
+    <ROW Dialog_="InstallChangeFolder" Control="List" Type="DirectoryList" X="21" Y="90" Width="332" Height="97" Attributes="15" Property="_BrowseProperty" Text="##IDS__IsBrowseFolderDlg_8##" Order="900"/>
+    <ROW Dialog_="InstallChangeFolder" Control="TailText" Type="Text" X="21" Y="193" Width="99" Height="13" Attributes="3" Text="&amp;Folder name:" Order="1000"/>
+    <ROW Dialog_="InstallChangeFolder" Control="Tail" Type="PathEdit" X="21" Y="207" Width="332" Height="17" Attributes="15" Property="_BrowseProperty" Text="##IDS__IsBrowseFolderDlg_11##" Order="1100"/>
+    <ROW Dialog_="InstallChangeFolder" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="1200"/>
+    <ROW Dialog_="InstallChangeFolder" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1300"/>
+    <ROW Dialog_="InstallChangeFolder" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1400"/>
+    <ROW Dialog_="InstallChangeFolder" Control="OK" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="OK" Order="1500"/>
+    <ROW Dialog_="InstallChangeFolder" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1600"/>
+    <ROW Dialog_="InstallWelcome" Control="Image" Type="Bitmap" X="0" Y="0" Width="374" Height="234" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="InstallWelcome" Control="TextLine1" Type="Text" X="135" Y="8" Width="225" Height="45" Attributes="196611" Text="Welcome to the InstallShield Wizard for [ProductName]" TextStyle="TahomaBold10" Order="200"/>
+    <ROW Dialog_="InstallWelcome" Control="TextLine2" Type="Text" X="135" Y="55" Width="228" Height="45" Attributes="196611" Text="The InstallShield(R) Wizard will install [ProductName] on your computer. To continue, click Next." Order="300"/>
+    <ROW Dialog_="InstallWelcome" Control="Copyright" Type="Text" X="135" Y="144" Width="228" Height="73" Attributes="65539" Text="WARNING: This program is protected by copyright law and international treaties." Order="400"/>
+    <ROW Dialog_="InstallWelcome" Control="DlgLine" Type="Line" X="0" Y="234" Width="374" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="InstallWelcome" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="600"/>
+    <ROW Dialog_="InstallWelcome" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="700"/>
+    <ROW Dialog_="InstallWelcome" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="800"/>
+    <ROW Dialog_="LicenseAgreement" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="LicenseAgreement" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="License Agreement" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="LicenseAgreement" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Please read the following license agreement carefully." Order="300"/>
+    <ROW Dialog_="LicenseAgreement" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="LicenseAgreement" Control="Memo" Type="ScrollableText" X="8" Y="55" Width="358" Height="130" Attributes="7" Text="7-Zip File Manager 23.01\rtf808C.tmp" Order="500"/>
+    <ROW Dialog_="LicenseAgreement" Control="ISPrintButton" Type="PushButton" X="301" Y="188" Width="65" Height="17" Attributes="3" Text="&amp;Print" Order="600"/>
+    <ROW Dialog_="LicenseAgreement" Control="Agree" Type="RadioButtonGroup" X="8" Y="190" Width="291" Height="40" Attributes="3" Property="AgreeToLicense" Order="700"/>
+    <ROW Dialog_="LicenseAgreement" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="800"/>
+    <ROW Dialog_="LicenseAgreement" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="900"/>
+    <ROW Dialog_="LicenseAgreement" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1000"/>
+    <ROW Dialog_="LicenseAgreement" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1100"/>
+    <ROW Dialog_="LicenseAgreement" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="1200"/>
+    <ROW Dialog_="LicenseAgreement" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1300"/>
+    <ROW Dialog_="MaintenanceType" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="MaintenanceType" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Program Maintenance" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="MaintenanceType" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Modify, repair, or remove the program." Order="300"/>
+    <ROW Dialog_="MaintenanceType" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="MaintenanceType" Control="RadioGroup" Type="RadioButtonGroup" X="21" Y="55" Width="290" Height="170" Attributes="3" Property="_IsMaintenance" Order="500"/>
+    <ROW Dialog_="MaintenanceType" Control="Ico1" Type="Icon" X="35" Y="75" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="600"/>
+    <ROW Dialog_="MaintenanceType" Control="Text1" Type="Text" X="80" Y="72" Width="260" Height="35" Attributes="3" Text="Change which program features are installed. This option displays the Custom Selection dialog in which you can change the way features are installed." Order="700"/>
+    <ROW Dialog_="MaintenanceType" Control="Ico2" Type="Icon" X="35" Y="135" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="800"/>
+    <ROW Dialog_="MaintenanceType" Control="Text2" Type="Text" X="80" Y="135" Width="260" Height="35" Attributes="3" Text="Repair installation errors in the program. This option fixes missing or corrupt files, shortcuts, and registry entries." Order="900"/>
+    <ROW Dialog_="MaintenanceType" Control="Ico3" Type="Icon" X="35" Y="195" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="1000"/>
+    <ROW Dialog_="MaintenanceType" Control="Text3" Type="Text" X="80" Y="192" Width="260" Height="35" Attributes="131075" Text="Remove [ProductName] from your computer." Order="1100"/>
+    <ROW Dialog_="MaintenanceType" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="1200"/>
+    <ROW Dialog_="MaintenanceType" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1300"/>
+    <ROW Dialog_="MaintenanceType" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1400"/>
+    <ROW Dialog_="MaintenanceType" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1500"/>
+    <ROW Dialog_="MaintenanceType" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="1600"/>
+    <ROW Dialog_="MaintenanceType" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1700"/>
+    <ROW Dialog_="MaintenanceWelcome" Control="Image" Type="Bitmap" X="0" Y="0" Width="374" Height="234" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="MaintenanceWelcome" Control="TextLine1" Type="Text" X="135" Y="8" Width="225" Height="45" Attributes="196611" Text="Welcome to the InstallShield Wizard for [ProductName]" TextStyle="TahomaBold10" Order="200"/>
+    <ROW Dialog_="MaintenanceWelcome" Control="TextLine2" Type="Text" X="135" Y="55" Width="228" Height="50" Attributes="196611" Text="The InstallShield(R) Wizard will allow you to modify, repair, or remove [ProductName]. To continue, click Next." Order="300"/>
+    <ROW Dialog_="MaintenanceWelcome" Control="DlgLine" Type="Line" X="0" Y="234" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="MaintenanceWelcome" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="500"/>
+    <ROW Dialog_="MaintenanceWelcome" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="600"/>
+    <ROW Dialog_="MaintenanceWelcome" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="700"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Files in Use" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Some files that need to be updated are currently in use." Order="300"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="DlgText" Type="Text" X="21" Y="51" Width="348" Height="14" Attributes="3" Text="The following applications are using files that need to be updated by this setup." Order="500"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="List" Type="ListBox" X="21" Y="66" Width="331" Height="130" Attributes="3" Property="FileInUseProcess" Order="600"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="Restart" Type="RadioButtonGroup" X="19" Y="187" Width="343" Height="40" Attributes="3" Property="RestartManagerOption" Order="700"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="800"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="900"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1000"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="OK" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="OK" Order="1100"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1200"/>
+    <ROW Dialog_="OutOfSpace" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="OutOfSpace" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Out of Disk Space" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="OutOfSpace" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Disk space required for the installation exceeds available disk space." Order="300"/>
+    <ROW Dialog_="OutOfSpace" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="OutOfSpace" Control="DlgText" Type="Text" X="21" Y="51" Width="326" Height="43" Attributes="3" Text="The highlighted volumes do not have enough disk space available for the currently selected features. You can remove files from the highlighted volumes, choose to install fewer features onto local drives, or select different destination drives." Order="500"/>
+    <ROW Dialog_="OutOfSpace" Control="List" Type="VolumeCostList" X="21" Y="95" Width="332" Height="120" Attributes="393223" Text="{120}{70}{70}{70}{70}" Order="600"/>
+    <ROW Dialog_="OutOfSpace" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="700"/>
+    <ROW Dialog_="OutOfSpace" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="800"/>
+    <ROW Dialog_="OutOfSpace" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="900"/>
+    <ROW Dialog_="OutOfSpace" Control="Resume" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="OK" Order="1000"/>
+    <ROW Dialog_="PatchWelcome" Control="Image" Type="Bitmap" X="0" Y="0" Width="374" Height="234" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="PatchWelcome" Control="TextLine1" Type="Text" X="135" Y="8" Width="225" Height="45" Attributes="196611" Text="Welcome to the Patch for [ProductName]" TextStyle="TahomaBold10" Order="200"/>
+    <ROW Dialog_="PatchWelcome" Control="TextLine2" Type="Text" X="135" Y="54" Width="228" Height="45" Attributes="196611" Text="The InstallShield(R) Wizard will install the Patch for [ProductName] on your computer.  To continue, click Update." Order="300"/>
+    <ROW Dialog_="PatchWelcome" Control="DlgLine" Type="Line" X="0" Y="234" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="PatchWelcome" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="500"/>
+    <ROW Dialog_="PatchWelcome" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Update &gt;" Order="600"/>
+    <ROW Dialog_="PatchWelcome" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="700"/>
+    <ROW Dialog_="ReadyToInstall" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="ReadyToInstall" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65538" Text="Ready to Modify the Program" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="ReadyToInstall" Control="DlgTitle2" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65538" Text="Ready to Repair the Program" TextStyle="MSSansBold8" Order="300"/>
+    <ROW Dialog_="ReadyToInstall" Control="DlgTitle3" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65538" Text="Ready to Install the Program" TextStyle="MSSansBold8" Order="400"/>
+    <ROW Dialog_="ReadyToInstall" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="The wizard is ready to begin installation." Order="500"/>
+    <ROW Dialog_="ReadyToInstall" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="ReadyToInstall" Control="DlgText" Type="Text" X="21" Y="51" Width="326" Height="20" Attributes="3" Text="Click Install to begin the installation." Order="700"/>
+    <ROW Dialog_="ReadyToInstall" Control="DlgText1" Type="Text" X="21" Y="70" Width="330" Height="24" Attributes="3" Text="If you want to review or change any of your installation settings, click Back. Click Cancel to exit the wizard." Order="800"/>
+    <ROW Dialog_="ReadyToInstall" Control="DlgText2" Type="Text" X="21" Y="99" Width="330" Height="20" Attributes="2" Text="Install this application for:" Order="900"/>
+    <ROW Dialog_="ReadyToInstall" Control="InstallPerMachine" Type="PushButton" X="63" Y="123" Width="248" Height="17" Attributes="8388610" Text="&amp;Anyone who uses this computer (all users)" Order="1000"/>
+    <ROW Dialog_="ReadyToInstall" Control="InstallPerUser" Type="PushButton" X="63" Y="143" Width="248" Height="17" Attributes="2" Text="Only for &amp;me ([USERNAME])" Order="1100"/>
+    <ROW Dialog_="ReadyToInstall" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="1200"/>
+    <ROW Dialog_="ReadyToInstall" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1300"/>
+    <ROW Dialog_="ReadyToInstall" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1400"/>
+    <ROW Dialog_="ReadyToInstall" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1500"/>
+    <ROW Dialog_="ReadyToInstall" Control="InstallNow" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="8388611" Text="&amp;Install" Order="1600"/>
+    <ROW Dialog_="ReadyToInstall" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1700"/>
+    <ROW Dialog_="ReadyToRemove" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="ReadyToRemove" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Remove the Program" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="ReadyToRemove" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="You have chosen to remove the program from your system." Order="300"/>
+    <ROW Dialog_="ReadyToRemove" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="ReadyToRemove" Control="DlgText" Type="Text" X="21" Y="51" Width="326" Height="24" Attributes="131075" Text="Click Remove to remove [ProductName] from your computer. After removal, this program will no longer be available for use." Order="500"/>
+    <ROW Dialog_="ReadyToRemove" Control="DlgText1" Type="Text" X="21" Y="79" Width="330" Height="23" Attributes="3" Text="If you want to review or change any settings, click Back." Order="600"/>
+    <ROW Dialog_="ReadyToRemove" Control="DlgText2" Type="Text" X="21" Y="102" Width="330" Height="24" Attributes="3" Order="700"/>
+    <ROW Dialog_="ReadyToRemove" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="800"/>
+    <ROW Dialog_="ReadyToRemove" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="900"/>
+    <ROW Dialog_="ReadyToRemove" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1000"/>
+    <ROW Dialog_="ReadyToRemove" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1100"/>
+    <ROW Dialog_="ReadyToRemove" Control="RemoveNow" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="8388611" Text="&amp;Remove" Order="1200"/>
+    <ROW Dialog_="ReadyToRemove" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1300"/>
+    <ROW Dialog_="SetupCompleteError" Control="Image" Type="Bitmap" X="0" Y="0" Width="374" Height="234" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="SetupCompleteError" Control="TextLine1" Type="Text" X="135" Y="8" Width="225" Height="45" Attributes="65539" Text="InstallShield Wizard Completed" TextStyle="TahomaBold10" Order="200"/>
+    <ROW Dialog_="SetupCompleteError" Control="TextLine2" Type="Text" X="135" Y="55" Width="228" Height="25" Attributes="196611" Text="The wizard was interrupted before [ProductName] could be completely installed." Order="300"/>
+    <ROW Dialog_="SetupCompleteError" Control="FinishText1" Type="Text" X="135" Y="80" Width="228" Height="50" Attributes="65539" Text="Your system has not been modified. To complete installation at another time, please run setup again." Order="400"/>
+    <ROW Dialog_="SetupCompleteError" Control="RestContText1" Type="Text" X="135" Y="80" Width="228" Height="50" Attributes="65539" Text="You can either keep any existing installed elements on your system to continue this installation at a later time or you can restore your system to its original state prior to the installation." Order="500"/>
+    <ROW Dialog_="SetupCompleteError" Control="FinishText2" Type="Text" X="135" Y="135" Width="228" Height="25" Attributes="65539" Text="Click Finish to exit the wizard." Order="600"/>
+    <ROW Dialog_="SetupCompleteError" Control="RestContText2" Type="Text" X="135" Y="135" Width="228" Height="25" Attributes="65539" Text="Click Restore or Continue Later to exit the wizard." Order="700"/>
+    <ROW Dialog_="SetupCompleteError" Control="CheckShowMsiLog" Type="CheckBox" X="151" Y="172" Width="10" Height="9" Attributes="2" Property="ISSHOWMSILOG" Order="800"/>
+    <ROW Dialog_="SetupCompleteError" Control="ShowMsiLogText" Type="Text" X="164" Y="172" Width="198" Height="10" Attributes="65538" Text="Show the Windows Installer log" Order="900"/>
+    <ROW Dialog_="SetupCompleteError" Control="DlgLine" Type="Line" X="0" Y="234" Width="374" Height="0" Attributes="1" Order="1000"/>
+    <ROW Dialog_="SetupCompleteError" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="1100"/>
+    <ROW Dialog_="SetupCompleteError" Control="Finish" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Finish" Order="1200"/>
+    <ROW Dialog_="SetupCompleteError" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="1" Text="Cancel" Order="1300"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="Image" Type="Bitmap" X="0" Y="0" Width="374" Height="234" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="TextLine1" Type="Text" X="135" Y="8" Width="225" Height="45" Attributes="65539" Text="InstallShield Wizard Completed" TextStyle="TahomaBold10" Order="200"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="UpdateTextLine1" Type="Text" X="135" Y="30" Width="228" Height="45" Attributes="196610" Text="Setup has finished installing [ProductName]." Order="300"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="TextLine3" Type="Text" X="135" Y="55" Width="228" Height="45" Attributes="196610" Text="The InstallShield Wizard has successfully uninstalled [ProductName]. Click Finish to exit the wizard." Order="400"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="TextLine2" Type="Text" X="135" Y="55" Width="228" Height="45" Attributes="196610" Text="The InstallShield Wizard has successfully installed [ProductName]. Click Finish to exit the wizard." Order="500"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="UpdateTextLine2" Type="Text" X="135" Y="80" Width="228" Height="45" Attributes="196610" Text="Some program files might have been updated since you purchased your copy of [ProductName]." Order="600"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="CheckLaunchProgram" Type="CheckBox" X="151" Y="114" Width="10" Height="9" Attributes="2" Property="LAUNCHPROGRAM" Order="700"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="LaunchProgramText" Type="Text" X="164" Y="112" Width="198" Height="15" Attributes="65538" Text="Launch the program" Order="800"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="UpdateTextLine3" Type="Text" X="135" Y="120" Width="228" Height="45" Attributes="65538" Text="Your Internet connection can be used to make sure that you have the latest updates." Order="900"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="CheckLaunchReadme" Type="CheckBox" X="151" Y="148" Width="10" Height="9" Attributes="2" Property="LAUNCHREADME" Order="1000"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="LaunchReadmeText" Type="Text" X="164" Y="148" Width="198" Height="13" Attributes="65538" Text="Show the readme file" Order="1100"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="CheckBoxUpdates" Type="CheckBox" X="135" Y="164" Width="10" Height="9" Attributes="2" Property="ISCHECKFORPRODUCTUPDATES" Text="CheckBox1" Order="1200"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="CheckForUpdatesText" Type="Text" X="152" Y="162" Width="190" Height="30" Attributes="65538" Text="&amp;Yes, check for program updates (Recommended) after the setup completes." Order="1300"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="CheckShowMsiLog" Type="CheckBox" X="151" Y="182" Width="10" Height="9" Attributes="2" Property="ISSHOWMSILOG_1" Order="1400"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="ShowMsiLogText" Type="Text" X="164" Y="182" Width="198" Height="10" Attributes="65538" Text="Show the Windows Installer log" Order="1500"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="DlgLine" Type="Line" X="0" Y="234" Width="374" Height="0" Attributes="1" Order="1600"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="1700"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="OK" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Finish" Order="1800"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="1" Text="Cancel" Order="1900"/>
+    <ROW Dialog_="SetupInitialization" Control="Image" Type="Bitmap" X="0" Y="0" Width="374" Height="234" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="SetupInitialization" Control="TextLine1" Type="Text" X="135" Y="8" Width="225" Height="45" Attributes="196611" Text="Welcome to the InstallShield Wizard for [ProductName]" TextStyle="TahomaBold10" Order="200"/>
+    <ROW Dialog_="SetupInitialization" Control="TextLine2" Type="Text" X="135" Y="55" Width="228" Height="30" Attributes="196611" Text="[ProductName] Setup is preparing the InstallShield Wizard which will guide you through the program setup process.  Please wait." Order="300"/>
+    <ROW Dialog_="SetupInitialization" Control="ActionText" Type="Text" X="135" Y="109" Width="220" Height="36" Attributes="65539" Text="##IDS__IsInitDlg_2##" Order="400"/>
+    <ROW Dialog_="SetupInitialization" Control="ActionData" Type="Text" X="135" Y="125" Width="228" Height="12" Attributes="65539" Text="##IDS__IsInitDlg_1##" Order="500"/>
+    <ROW Dialog_="SetupInitialization" Control="DlgLine" Type="Line" X="0" Y="234" Width="374" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="SetupInitialization" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="700"/>
+    <ROW Dialog_="SetupInitialization" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="1" Text="&amp;Next &gt;" Order="800"/>
+    <ROW Dialog_="SetupInitialization" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="900"/>
+    <ROW Dialog_="SetupInterrupted" Control="Image" Type="Bitmap" X="0" Y="0" Width="374" Height="234" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="SetupInterrupted" Control="TextLine1" Type="Text" X="135" Y="8" Width="225" Height="45" Attributes="65539" Text="InstallShield Wizard Completed" TextStyle="TahomaBold10" Order="200"/>
+    <ROW Dialog_="SetupInterrupted" Control="TextLine2" Type="Text" X="135" Y="55" Width="228" Height="25" Attributes="196611" Text="The wizard was interrupted before [ProductName] could be completely installed." Order="300"/>
+    <ROW Dialog_="SetupInterrupted" Control="FinishText1" Type="Text" X="135" Y="80" Width="228" Height="50" Attributes="65539" Text="Your system has not been modified. To install this program at a later time, please run the installation again." Order="400"/>
+    <ROW Dialog_="SetupInterrupted" Control="RestContText1" Type="Text" X="135" Y="80" Width="228" Height="50" Attributes="65539" Text="You can either keep any existing installed elements on your system to continue this installation at a later time or you can restore your system to its original state prior to the installation." Order="500"/>
+    <ROW Dialog_="SetupInterrupted" Control="FinishText2" Type="Text" X="135" Y="135" Width="228" Height="25" Attributes="65539" Text="Click Finish to exit the wizard." Order="600"/>
+    <ROW Dialog_="SetupInterrupted" Control="RestContText2" Type="Text" X="135" Y="135" Width="228" Height="25" Attributes="65539" Text="Click Restore or Continue Later to exit the wizard." Order="700"/>
+    <ROW Dialog_="SetupInterrupted" Control="CheckShowMsiLog" Type="CheckBox" X="151" Y="172" Width="10" Height="9" Attributes="2" Property="ISSHOWMSILOG_2" Order="800"/>
+    <ROW Dialog_="SetupInterrupted" Control="ShowMsiLogText" Type="Text" X="164" Y="172" Width="198" Height="10" Attributes="65538" Text="Show the Windows Installer log" Order="900"/>
+    <ROW Dialog_="SetupInterrupted" Control="DlgLine" Type="Line" X="0" Y="234" Width="374" Height="0" Attributes="1" Order="1000"/>
+    <ROW Dialog_="SetupInterrupted" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="1100"/>
+    <ROW Dialog_="SetupInterrupted" Control="Finish" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Finish" Order="1200"/>
+    <ROW Dialog_="SetupInterrupted" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="1" Text="Cancel" Order="1300"/>
+    <ROW Dialog_="SetupProgress" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="SetupProgress" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="196610" Text="Installing [ProductName]" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="SetupProgress" Control="DlgTitle2" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="196610" Text="Uninstalling [ProductName]" TextStyle="MSSansBold8" Order="300"/>
+    <ROW Dialog_="SetupProgress" Control="DlgDesc2" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65538" Text="The program features you selected are being uninstalled." Order="400"/>
+    <ROW Dialog_="SetupProgress" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65538" Text="The program features you selected are being installed." Order="500"/>
+    <ROW Dialog_="SetupProgress" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="SetupProgress" Control="SetupIcon" Type="Icon" X="21" Y="51" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="700"/>
+    <ROW Dialog_="SetupProgress" Control="DlgText" Type="Text" X="59" Y="51" Width="275" Height="30" Attributes="196610" Text="Please wait while the InstallShield Wizard installs [ProductName]. This may take several minutes." Order="800"/>
+    <ROW Dialog_="SetupProgress" Control="DlgText2" Type="Text" X="59" Y="51" Width="275" Height="30" Attributes="196610" Text="Please wait while the InstallShield Wizard uninstalls [ProductName]. This may take several minutes." Order="900"/>
+    <ROW Dialog_="SetupProgress" Control="LbStatus" Type="Text" X="59" Y="85" Width="70" Height="12" Attributes="3" Text="Status:" Order="1000"/>
+    <ROW Dialog_="SetupProgress" Control="ActionText" Type="Text" X="59" Y="100" Width="275" Height="12" Attributes="3" Text="##IDS__IsProgressDlg_2##" Order="1100"/>
+    <ROW Dialog_="SetupProgress" Control="ActionProgress95" Type="ProgressBar" X="59" Y="113" Width="275" Height="12" Attributes="65537" Text="Progress done" Order="1200"/>
+    <ROW Dialog_="SetupProgress" Control="TextTime" Type="Text" X="59" Y="139" Width="110" Height="12" Attributes="2" Text=")Hidden for now)Estimated time remaining:" Order="1300"/>
+    <ROW Dialog_="SetupProgress" Control="ShowTime" Type="Text" X="170" Y="139" Width="17" Height="12" Attributes="2" Text="(Hidden for now)" Order="1400"/>
+    <ROW Dialog_="SetupProgress" Control="LbSec" Type="Text" X="192" Y="139" Width="32" Height="12" Attributes="2" Text="(Hidden for now)Sec." Order="1500"/>
+    <ROW Dialog_="SetupProgress" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="1600"/>
+    <ROW Dialog_="SetupProgress" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1700"/>
+    <ROW Dialog_="SetupProgress" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1800"/>
+    <ROW Dialog_="SetupProgress" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="1900"/>
+    <ROW Dialog_="SetupProgress" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="1" Text="&amp;Next &gt;" Order="2000"/>
+    <ROW Dialog_="SetupProgress" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="2100"/>
+    <ROW Dialog_="SetupResume" Control="Image" Type="Bitmap" X="0" Y="0" Width="374" Height="234" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="SetupResume" Control="TextLine1" Type="Text" X="135" Y="8" Width="225" Height="45" Attributes="196611" Text="Resuming the InstallShield Wizard for [ProductName]" TextStyle="TahomaBold10" Order="200"/>
+    <ROW Dialog_="SetupResume" Control="ResumeText" Type="Text" X="135" Y="46" Width="228" Height="45" Attributes="196611" Text="The InstallShield(R) Wizard will complete the suspended installation of [ProductName] on your computer. To continue, click Next." Order="300"/>
+    <ROW Dialog_="SetupResume" Control="PreselectedText" Type="Text" X="135" Y="55" Width="228" Height="45" Attributes="196611" Text="The InstallShield(R) Wizard will complete the installation of [ProductName] on your computer. To continue, click Next." Order="400"/>
+    <ROW Dialog_="SetupResume" Control="DlgLine" Type="Line" X="0" Y="234" Width="374" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="SetupResume" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="600"/>
+    <ROW Dialog_="SetupResume" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="700"/>
+    <ROW Dialog_="SetupResume" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="800"/>
+    <ROW Dialog_="SetupType" Control="Banner" Type="Bitmap" X="0" Y="0" Width="374" Height="44" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="SetupType" Control="DlgTitle" Type="Text" X="13" Y="6" Width="292" Height="25" Attributes="65539" Text="Setup Type" TextStyle="MSSansBold8" Order="200"/>
+    <ROW Dialog_="SetupType" Control="DlgDesc" Type="Text" X="21" Y="23" Width="292" Height="25" Attributes="65539" Text="Choose the setup type that best suits your needs." Order="300"/>
+    <ROW Dialog_="SetupType" Control="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="SetupType" Control="DlgText" Type="Text" X="21" Y="51" Width="326" Height="10" Attributes="3" Text="Please select a setup type." Order="500"/>
+    <ROW Dialog_="SetupType" Control="RadioGroup" Type="RadioButtonGroup" X="21" Y="79" Width="264" Height="120" Attributes="3" Property="_IsSetupTypeMin" Order="600"/>
+    <ROW Dialog_="SetupType" Control="CompleteIco" Type="Icon" X="34" Y="94" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="700"/>
+    <ROW Dialog_="SetupType" Control="CompText" Type="Text" X="80" Y="94" Width="246" Height="35" Attributes="3" Text="All program features will be installed. (Requires the most disk space.)" Order="800"/>
+    <ROW Dialog_="SetupType" Control="CustomIco" Type="Icon" X="34" Y="154" Width="24" Height="24" Attributes="5242881" Text="nopicture.jpg" Order="900"/>
+    <ROW Dialog_="SetupType" Control="CustText" Type="Text" X="80" Y="154" Width="246" Height="35" Attributes="3" Text="Choose which program features you want installed and where they will be installed. Recommended for advanced users." Order="1000"/>
+    <ROW Dialog_="SetupType" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="1100"/>
+    <ROW Dialog_="SetupType" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="1200"/>
+    <ROW Dialog_="SetupType" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="1300"/>
+    <ROW Dialog_="SetupType" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="3" Text="&lt; &amp;Back" Order="1400"/>
+    <ROW Dialog_="SetupType" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="1500"/>
+    <ROW Dialog_="SetupType" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="1600"/>
+    <ROW Dialog_="SplashBitmap" Control="Image" Type="Bitmap" X="13" Y="12" Width="349" Height="211" Attributes="1" Text="nopicture.jpg" Order="100"/>
+    <ROW Dialog_="SplashBitmap" Control="Branding2" Type="Text" X="3" Y="228" Width="50" Height="13" Attributes="65537" Text="InstallShield" Order="200"/>
+    <ROW Dialog_="SplashBitmap" Control="Branding1" Type="Text" X="4" Y="229" Width="50" Height="13" Attributes="3" Text="InstallShield" TextStyle="MSSWhiteSerif8" Order="300"/>
+    <ROW Dialog_="SplashBitmap" Control="DlgLine" Type="Line" X="48" Y="234" Width="326" Height="0" Attributes="1" Order="400"/>
+    <ROW Dialog_="SplashBitmap" Control="Back" Type="PushButton" X="164" Y="243" Width="66" Height="17" Attributes="1" Text="&lt; &amp;Back" Order="500"/>
+    <ROW Dialog_="SplashBitmap" Control="Next" Type="PushButton" X="230" Y="243" Width="66" Height="17" Attributes="3" Text="&amp;Next &gt;" Order="600"/>
+    <ROW Dialog_="SplashBitmap" Control="Cancel" Type="PushButton" X="301" Y="243" Width="66" Height="17" Attributes="3" Text="Cancel" Order="700"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlConditionComponent">
+    <ROW Dialog_="SetupCompleteError" Control_="Cancel" Action="Disable" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Cancel" Action="Enable" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Back" Action="Disable" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Back" Action="Enable" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Back" Action="Default" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Finish" Action="Default" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="CheckShowMsiLog" Action="Show" Condition="MsiLogFileLocation"/>
+    <ROW Dialog_="SetupCompleteError" Control_="FinishText1" Action="Hide" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="FinishText1" Action="Show" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="FinishText2" Action="Hide" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="FinishText2" Action="Show" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="RestContText1" Action="Hide" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="RestContText1" Action="Show" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="RestContText2" Action="Hide" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="RestContText2" Action="Show" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupCompleteError" Control_="ShowMsiLogText" Action="Show" Condition="MsiLogFileLocation"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="TextLine2" Action="Show" Condition="ProgressType2=&quot;installed&quot; And ((ACTION&lt;&gt;&quot;INSTALL&quot;) OR (NOT ISENABLEDWUSFINISHDIALOG) OR (ISENABLEDWUSFINISHDIALOG And Installed))"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="CheckShowMsiLog" Action="Show" Condition="MsiLogFileLocation And NOT ISENABLEDWUSFINISHDIALOG"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="ShowMsiLogText" Action="Show" Condition="MsiLogFileLocation And NOT ISENABLEDWUSFINISHDIALOG"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="CheckBoxUpdates" Action="Show" Condition="ISENABLEDWUSFINISHDIALOG And NOT Installed And ACTION=&quot;INSTALL&quot;"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="CheckForUpdatesText" Action="Show" Condition="ISENABLEDWUSFINISHDIALOG And NOT Installed And ACTION=&quot;INSTALL&quot;"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="CheckLaunchReadme" Action="Show" Condition="SHOWLAUNCHREADME=&quot;-1&quot;  And READMEFILETOLAUNCHATEND &lt;&gt; &quot;&quot; And NOT Installed And NOT ISENABLEDWUSFINISHDIALOG"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="CheckLaunchProgram" Action="Show" Condition="SHOWLAUNCHPROGRAM=&quot;-1&quot; And PROGRAMFILETOLAUNCHATEND &lt;&gt; &quot;&quot; And NOT Installed And NOT ISENABLEDWUSFINISHDIALOG"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="LaunchProgramText" Action="Show" Condition="SHOWLAUNCHPROGRAM=&quot;-1&quot; And PROGRAMFILETOLAUNCHATEND &lt;&gt; &quot;&quot; And NOT Installed And NOT ISENABLEDWUSFINISHDIALOG"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="LaunchReadmeText" Action="Show" Condition="SHOWLAUNCHREADME=&quot;-1&quot;  And READMEFILETOLAUNCHATEND &lt;&gt; &quot;&quot; And NOT Installed And NOT ISENABLEDWUSFINISHDIALOG"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="TextLine3" Action="Show" Condition="ProgressType2=&quot;uninstalled&quot; And ((ACTION&lt;&gt;&quot;INSTALL&quot;) OR (NOT ISENABLEDWUSFINISHDIALOG) OR (ISENABLEDWUSFINISHDIALOG And Installed))"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="UpdateTextLine1" Action="Show" Condition="ISENABLEDWUSFINISHDIALOG And NOT Installed And ACTION=&quot;INSTALL&quot;"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="UpdateTextLine2" Action="Show" Condition="ISENABLEDWUSFINISHDIALOG And NOT Installed And ACTION=&quot;INSTALL&quot;"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="UpdateTextLine3" Action="Show" Condition="ISENABLEDWUSFINISHDIALOG And NOT Installed And ACTION=&quot;INSTALL&quot;"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Cancel" Action="Disable" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Cancel" Action="Enable" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Back" Action="Disable" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Back" Action="Enable" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Back" Action="Default" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Finish" Action="Default" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="CheckShowMsiLog" Action="Show" Condition="MsiLogFileLocation"/>
+    <ROW Dialog_="SetupInterrupted" Control_="FinishText1" Action="Hide" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="FinishText1" Action="Show" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="FinishText2" Action="Hide" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="FinishText2" Action="Show" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="RestContText1" Action="Hide" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="RestContText1" Action="Show" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="RestContText2" Action="Hide" Condition="NOT UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="RestContText2" Action="Show" Condition="UpdateStarted"/>
+    <ROW Dialog_="SetupInterrupted" Control_="ShowMsiLogText" Action="Show" Condition="MsiLogFileLocation"/>
+    <ROW Dialog_="SetupProgress" Control_="DlgDesc" Action="Show" Condition="ProgressType2=&quot;installed&quot;"/>
+    <ROW Dialog_="SetupProgress" Control_="DlgTitle" Action="Show" Condition="ProgressType1=&quot;Installing&quot;"/>
+    <ROW Dialog_="SetupProgress" Control_="DlgText" Action="Show" Condition="ProgressType3=&quot;installs&quot;"/>
+    <ROW Dialog_="SetupProgress" Control_="DlgText2" Action="Show" Condition="ProgressType3=&quot;uninstalls&quot;"/>
+    <ROW Dialog_="SetupProgress" Control_="DlgTitle2" Action="Show" Condition="ProgressType1=&quot;Uninstalling&quot;"/>
+    <ROW Dialog_="SetupProgress" Control_="DlgDesc2" Action="Show" Condition="ProgressType2=&quot;uninstalled&quot;"/>
+    <ROW Dialog_="CustomerInformation" Control_="SerialLabel" Action="Show" Condition="SERIALNUMSHOW"/>
+    <ROW Dialog_="CustomerInformation" Control_="DlgRadioGroupText" Action="Hide" Condition="1"/>
+    <ROW Dialog_="CustomerInformation" Control_="DlgRadioGroupText" Action="Hide" Condition="NOT Privileged"/>
+    <ROW Dialog_="CustomerInformation" Control_="DlgRadioGroupText" Action="Hide" Condition="ProductState &gt; 0"/>
+    <ROW Dialog_="CustomerInformation" Control_="DlgRadioGroupText" Action="Hide" Condition="Version9X"/>
+    <ROW Dialog_="CustomerInformation" Control_="RadioGroup" Action="Hide" Condition="1"/>
+    <ROW Dialog_="CustomerInformation" Control_="RadioGroup" Action="Hide" Condition="NOT Privileged"/>
+    <ROW Dialog_="CustomerInformation" Control_="RadioGroup" Action="Hide" Condition="ProductState &gt; 0"/>
+    <ROW Dialog_="CustomerInformation" Control_="RadioGroup" Action="Hide" Condition="Version9X"/>
+    <ROW Dialog_="CustomerInformation" Control_="SerialNumber" Action="Show" Condition="SERIALNUMSHOW"/>
+    <ROW Dialog_="CustomSetup" Control_="ChangeFolder" Action="Hide" Condition="Installed"/>
+    <ROW Dialog_="CustomSetup" Control_="Details" Action="Hide" Condition="Installed"/>
+    <ROW Dialog_="CustomSetup" Control_="InstallLabel" Action="Hide" Condition="Installed"/>
+    <ROW Dialog_="InstallWelcome" Control_="Copyright" Action="Hide" Condition="SHOWCOPYRIGHT=&quot;No&quot;"/>
+    <ROW Dialog_="InstallWelcome" Control_="Copyright" Action="Show" Condition="SHOWCOPYRIGHT=&quot;Yes&quot;"/>
+    <ROW Dialog_="LicenseAgreement" Control_="Next" Action="Disable" Condition="AgreeToLicense &lt;&gt; &quot;Yes&quot;"/>
+    <ROW Dialog_="LicenseAgreement" Control_="Next" Action="Enable" Condition="AgreeToLicense = &quot;Yes&quot;"/>
+    <ROW Dialog_="ReadyToInstall" Control_="DlgTitle" Action="Show" Condition="ProgressType0=&quot;Modify&quot;"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallNow" Action="Disable" Condition="VersionNT &gt;= &quot;601&quot; AND ISSupportPerUser AND NOT Installed"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallNow" Action="Enable" Condition="VersionNT &lt; &quot;601&quot; OR NOT ISSupportPerUser OR Installed"/>
+    <ROW Dialog_="ReadyToInstall" Control_="DlgText" Action="Hide" Condition="VersionNT &gt;= &quot;601&quot; AND ISSupportPerUser AND NOT Installed"/>
+    <ROW Dialog_="ReadyToInstall" Control_="DlgText" Action="Show" Condition="VersionNT &lt; &quot;601&quot; OR NOT ISSupportPerUser OR Installed"/>
+    <ROW Dialog_="ReadyToInstall" Control_="DlgText2" Action="Hide" Condition="VersionNT &lt; &quot;601&quot; OR NOT ISSupportPerUser OR Installed"/>
+    <ROW Dialog_="ReadyToInstall" Control_="DlgText2" Action="Show" Condition="VersionNT &gt;= &quot;601&quot; AND ISSupportPerUser AND NOT Installed"/>
+    <ROW Dialog_="ReadyToInstall" Control_="DlgTitle2" Action="Show" Condition="ProgressType0=&quot;Repair&quot;"/>
+    <ROW Dialog_="ReadyToInstall" Control_="DlgTitle3" Action="Show" Condition="ProgressType0=&quot;install&quot;"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerMachine" Action="Hide" Condition="VersionNT &lt; &quot;601&quot; OR NOT ISSupportPerUser OR Installed"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerMachine" Action="Show" Condition="VersionNT &gt;= &quot;601&quot; AND ISSupportPerUser AND NOT Installed"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerUser" Action="Hide" Condition="VersionNT &lt; &quot;601&quot; OR NOT ISSupportPerUser OR Installed"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerUser" Action="Show" Condition="VersionNT &gt;= &quot;601&quot; AND ISSupportPerUser AND NOT Installed"/>
+    <ROW Dialog_="SetupResume" Control_="PreselectedText" Action="Hide" Condition="RESUME"/>
+    <ROW Dialog_="SetupResume" Control_="PreselectedText" Action="Show" Condition="NOT RESUME"/>
+    <ROW Dialog_="SetupResume" Control_="ResumeText" Action="Hide" Condition="NOT RESUME"/>
+    <ROW Dialog_="SetupResume" Control_="ResumeText" Action="Show" Condition="RESUME"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Cancel" Event="EndDialog" Argument="Return" Condition="1" Ordering="2"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Cancel" Event="[Suspend]" Argument="1" Condition="1" Ordering="1"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Back" Event="EndDialog" Argument="Return" Condition="1" Ordering="2"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Back" Event="[Suspend]" Argument="{}" Condition="1" Ordering="1"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Finish" Event="EndDialog" Argument="Exit" Condition="1" Ordering="2"/>
+    <ROW Dialog_="SetupCompleteError" Control_="Finish" Event="DoAction" Argument="ShowMsiLog" Condition="MsiLogFileLocation And (ISSHOWMSILOG=&quot;1&quot;)" Ordering="3"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="OK" Event="EndDialog" Argument="Exit" Condition="1" Ordering="2"/>
+    <ROW Dialog_="SetupCompleteSuccess" Control_="OK" Event="DoAction" Argument="ShowMsiLog" Condition="MsiLogFileLocation And (ISSHOWMSILOG=&quot;1&quot;) And NOT ISENABLEDWUSFINISHDIALOG" Ordering="6"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="1" Ordering="2"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Cancel" Event="[Suspend]" Argument="1" Condition="1" Ordering="1"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Back" Event="EndDialog" Argument="Exit" Condition="1" Ordering="2"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Back" Event="[Suspend]" Argument="{}" Condition="1" Ordering="1"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Finish" Event="EndDialog" Argument="Exit" Condition="1" Ordering="2"/>
+    <ROW Dialog_="SetupInterrupted" Control_="Finish" Event="DoAction" Argument="ShowMsiLog" Condition="MsiLogFileLocation And (ISSHOWMSILOG=&quot;1&quot;)" Ordering="3"/>
+    <ROW Dialog_="AdminChangeFolder" Control_="Cancel" Event="EndDialog" Argument="Return" Condition="1" Ordering="2"/>
+    <ROW Dialog_="AdminChangeFolder" Control_="Cancel" Event="Reset" Argument="0" Condition="1" Ordering="1"/>
+    <ROW Dialog_="AdminChangeFolder" Control_="Up" Event="DirectoryListUp" Argument="0" Condition="1" Ordering="0"/>
+    <ROW Dialog_="AdminChangeFolder" Control_="NewFolder" Event="DirectoryListNew" Argument="0" Condition="1" Ordering="0"/>
+    <ROW Dialog_="AdminChangeFolder" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="0"/>
+    <ROW Dialog_="AdminChangeFolder" Control_="OK" Event="SetTargetPath" Argument="TARGETDIR" Condition="1" Ordering="1"/>
+    <ROW Dialog_="AdminNetworkLocation" Control_="InstallNow" Event="EndDialog" Argument="Return" Condition="OutOfNoRbDiskSpace &lt;&gt; 1" Ordering="3"/>
+    <ROW Dialog_="AdminNetworkLocation" Control_="InstallNow" Event="SetTargetPath" Argument="TARGETDIR" Condition="1" Ordering="1"/>
+    <ROW Dialog_="CancelSetup" Control_="Yes" Event="EndDialog" Argument="Exit" Condition="1" Ordering="2"/>
+    <ROW Dialog_="CancelSetup" Control_="No" Event="EndDialog" Argument="Return" Condition="1" Ordering="0"/>
+    <ROW Dialog_="CustomerInformation" Control_="Next" Event="EndDialog" Argument="Exit" Condition="(SERIALNUMVALRETRYLIMIT) And (SERIALNUMVALRETRYLIMIT&lt;0) And (SERIALNUMVALRETURN&lt;&gt;SERIALNUMVALSUCCESSRETVAL)" Ordering="3"/>
+    <ROW Dialog_="CustomerInformation" Control_="Next" Event="[ALLUSERS]" Argument="1" Condition="ApplicationUsers = &quot;AllUsers&quot; And Privileged" Ordering="1"/>
+    <ROW Dialog_="CustomerInformation" Control_="Next" Event="[ALLUSERS]" Argument="{}" Condition="ApplicationUsers = &quot;OnlyCurrentUser&quot; And Privileged" Ordering="2"/>
+    <ROW Dialog_="CustomSetup" Control_="Next" Event="[_IsSetupTypeMin]" Argument="Custom" Condition="1" Ordering="0"/>
+    <ROW Dialog_="CustomSetupTips" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="1"/>
+    <ROW Dialog_="DatabaseFolder" Control_="ChangeFolder" Event="[_BrowseProperty]" Argument="DATABASEDIR" Condition="1" Ordering="2"/>
+    <ROW Dialog_="DestinationFolder" Control_="ChangeFolder" Event="[_BrowseProperty]" Argument="INSTALLDIR" Condition="1" Ordering="2"/>
+    <ROW Dialog_="DiskSpaceRequirements" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="0"/>
+    <ROW Dialog_="FilesInUse_1" Control_="Exit" Event="EndDialog" Argument="Exit" Condition="1" Ordering="0"/>
+    <ROW Dialog_="FilesInUse_1" Control_="Ignore" Event="EndDialog" Argument="Ignore" Condition="1" Ordering="0"/>
+    <ROW Dialog_="FilesInUse_1" Control_="Retry" Event="EndDialog" Argument="Retry" Condition="1" Ordering="0"/>
+    <ROW Dialog_="InstallChangeFolder" Control_="Cancel" Event="EndDialog" Argument="Return" Condition="1" Ordering="2"/>
+    <ROW Dialog_="InstallChangeFolder" Control_="Cancel" Event="Reset" Argument="0" Condition="1" Ordering="1"/>
+    <ROW Dialog_="InstallChangeFolder" Control_="Up" Event="DirectoryListUp" Argument="0" Condition="1" Ordering="0"/>
+    <ROW Dialog_="InstallChangeFolder" Control_="NewFolder" Event="DirectoryListNew" Argument="0" Condition="1" Ordering="0"/>
+    <ROW Dialog_="InstallChangeFolder" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="3"/>
+    <ROW Dialog_="InstallChangeFolder" Control_="OK" Event="SetTargetPath" Argument="[_BrowseProperty]" Condition="1" Ordering="2"/>
+    <ROW Dialog_="InstallWelcome" Control_="Next" Event="EndDialog" Argument="Return" Condition="1" Ordering="0"/>
+    <ROW Dialog_="LicenseAgreement" Control_="ISPrintButton" Event="DoAction" Argument="ISPrint" Condition="1" Ordering="0"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="[ProgressType0]" Argument="Modify" Condition="_IsMaintenance = &quot;Change&quot;" Ordering="2"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="[ProgressType0]" Argument="Repair" Condition="_IsMaintenance = &quot;Reinstall&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="[ProgressType1]" Argument="Modifying" Condition="_IsMaintenance = &quot;Change&quot;" Ordering="3"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="[ProgressType1]" Argument="Repairing" Condition="_IsMaintenance = &quot;Reinstall&quot;" Ordering="4"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="[ProgressType2]" Argument="modified" Condition="_IsMaintenance = &quot;Change&quot;" Ordering="6"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="[ProgressType2]" Argument="repairs" Condition="_IsMaintenance = &quot;Reinstall&quot;" Ordering="5"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="[ProgressType3]" Argument="repairs" Condition="_IsMaintenance = &quot;Reinstall&quot;" Ordering="8"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="[ProgressType3]" Argument="modifies" Condition="_IsMaintenance = &quot;Change&quot;" Ordering="7"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="Reinstall" Argument="ALL" Condition="_IsMaintenance = &quot;Reinstall&quot;" Ordering="10"/>
+    <ROW Dialog_="MaintenanceType" Control_="Next" Event="ReinstallMode" Argument="[ReinstallModeText]" Condition="_IsMaintenance = &quot;Reinstall&quot;" Ordering="9"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="1" Ordering="1"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="1"/>
+    <ROW Dialog_="MsiRMFilesInUse_1" Control_="OK" Event="RMShutdownAndRestart" Argument="0" Condition="RestartManagerOption=&quot;CloseRestart&quot;" Ordering="2"/>
+    <ROW Dialog_="PatchWelcome" Control_="Next" Event="EndDialog" Argument="Return" Condition="1" Ordering="3"/>
+    <ROW Dialog_="PatchWelcome" Control_="Next" Event="Reinstall" Argument="ALL" Condition="PATCH And REINSTALL=&quot;&quot;" Ordering="1"/>
+    <ROW Dialog_="PatchWelcome" Control_="Next" Event="ReinstallMode" Argument="omus" Condition="PATCH And REINSTALLMODE=&quot;&quot;" Ordering="2"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallNow" Event="EndDialog" Argument="Return" Condition="OutOfNoRbDiskSpace &lt;&gt; 1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallNow" Event="[ProgressType1]" Argument="Installing" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallNow" Event="[ProgressType2]" Argument="installed" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallNow" Event="[ProgressType3]" Argument="installs" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerMachine" Event="EndDialog" Argument="Return" Condition="OutOfNoRbDiskSpace &lt;&gt; 1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerMachine" Event="[ALLUSERS]" Argument="1" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerMachine" Event="[ProgressType1]" Argument="Installing" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerMachine" Event="[ProgressType2]" Argument="installed" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerMachine" Event="[ProgressType3]" Argument="installs" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerMachine" Event="[MSIINSTALLPERUSER]" Argument="{}" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerUser" Event="EndDialog" Argument="Return" Condition="OutOfNoRbDiskSpace &lt;&gt; 1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerUser" Event="[ALLUSERS]" Argument="2" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerUser" Event="[ProgressType1]" Argument="Installing" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerUser" Event="[ProgressType2]" Argument="installed" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerUser" Event="[ProgressType3]" Argument="installs" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToInstall" Control_="InstallPerUser" Event="[MSIINSTALLPERUSER]" Argument="1" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToRemove" Control_="RemoveNow" Event="EndDialog" Argument="Return" Condition="OutOfNoRbDiskSpace &lt;&gt; 1" Ordering="2"/>
+    <ROW Dialog_="ReadyToRemove" Control_="RemoveNow" Event="[ProgressType1]" Argument="Uninstalling" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToRemove" Control_="RemoveNow" Event="[ProgressType2]" Argument="uninstalled" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToRemove" Control_="RemoveNow" Event="[ProgressType3]" Argument="uninstalls" Condition="1" Ordering="0"/>
+    <ROW Dialog_="ReadyToRemove" Control_="RemoveNow" Event="Remove" Argument="ALL" Condition="1" Ordering="1"/>
+    <ROW Dialog_="SetupResume" Control_="Next" Event="EndDialog" Argument="Return" Condition="OutOfNoRbDiskSpace &lt;&gt; 1" Ordering="0"/>
+    <ROW Dialog_="SetupType" Control_="Next" Event="AddLocal" Argument="ALL" Condition="_IsSetupTypeMin = &quot;Typical&quot;" Ordering="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="ProgramFilesFolder" Component_="RegistryData_HKLM" ManualDelete="false"/>
+    <ROW Directory_="ProgramFilesFolder" Component_="RegistryData_HKCR" ManualDelete="false"/>
+    <ROW Directory_="ProgramFilesFolder" Component_="RegistryData_HKU" ManualDelete="false"/>
+    <ROW Directory_="ProgramFilesFolder" Component_="RemoveRegistry_Component" ManualDelete="false"/>
+    <ROW Directory_="ProgramFiles64Folder" Component_="RegistryData_HKCR64" ManualDelete="false"/>
+    <ROW Directory_="ProgramFiles64Folder" Component_="RegistryData_HKLM64" ManualDelete="false"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="ISPreventDowngrade" Type="19" Target="[IS_PREVENT_DOWNGRADE_EXIT]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFiles64Folder]7-Zip"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+    <ROW Action="SetARPINSTALLLOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SetAllUsersProfileNT" Type="51" Source="ALLUSERSPROFILE_1_IMP" Target="[%SystemRoot]\Profiles\All Users"/>
+    <ROW Action="ShowMsiLog" Type="226" Source="SystemFolder" Target="[SystemFolder]notepad.exe &quot;[MsiLogFileLocation]&quot;" WithoutSeq="true"/>
+    <ROW Action="setAllUsersProfile2K" Type="51" Source="ALLUSERSPROFILE_IMP" Target="[%ALLUSERSPROFILE]"/>
+    <ROW Action="setPublicProfileVista" Type="51" Source="PUBLIC_IMP" Target="[%PUBLIC]"/>
+    <ROW Action="setSysArmProfileVista" Type="51" Source="SystemArmFolder_IMP" Target="[%systemroot]\SysArm32"/>
+    <ROW Action="setUserProfileNT" Type="51" Source="USERPROFILE_1_IMP" Target="[%USERPROFILE]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
+    <ROW Dialog="AdminChangeFolder" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="OK" Control_Cancel="Cancel"/>
+    <ROW Dialog="AdminNetworkLocation" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="InstallNow" Control_Cancel="Cancel"/>
+    <ROW Dialog="AdminWelcome" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="CancelSetup" HCentering="50" VCentering="50" Width="260" Height="85" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="No" Control_Cancel="No"/>
+    <ROW Dialog="CustomSetup" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="35" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="CustomSetupTips" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="OK" Control_Cancel="OK"/>
+    <ROW Dialog="CustomerInformation" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="DatabaseFolder" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="DestinationFolder" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="DiskSpaceRequirements" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="OK" Control_Cancel="OK"/>
+    <ROW Dialog="FilesInUse_1" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="19" Title="[ProductName] - InstallShield Wizard" Control_Default="Retry" Control_Cancel="Exit"/>
+    <ROW Dialog="InstallChangeFolder" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="OK" Control_Cancel="Cancel"/>
+    <ROW Dialog="InstallWelcome" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="LicenseAgreement" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="2" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="MaintenanceType" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="MaintenanceWelcome" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="MsiRMFilesInUse_1" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="19" Title="[ProductName] - InstallShield Wizard" Control_Default="OK" Control_Cancel="Cancel"/>
+    <ROW Dialog="OutOfSpace" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Resume" Control_Cancel="Resume"/>
+    <ROW Dialog="PatchWelcome" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] Patch - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="ReadyToInstall" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="35" Title="[ProductName] - InstallShield Wizard" Control_Default="InstallNow" Control_Cancel="Cancel"/>
+    <ROW Dialog="ReadyToRemove" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="RemoveNow" Control_Cancel="Cancel"/>
+    <ROW Dialog="SetupCompleteError" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Finish" Control_Cancel="Finish"/>
+    <ROW Dialog="SetupCompleteSuccess" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="OK" Control_Cancel="OK"/>
+    <ROW Dialog="SetupInitialization" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="5" Title="[ProductName] - InstallShield Wizard" Control_Default="Cancel" Control_Cancel="Cancel"/>
+    <ROW Dialog="SetupInterrupted" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Finish" Control_Cancel="Finish"/>
+    <ROW Dialog="SetupProgress" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="5" Title="[ProductName] - InstallShield Wizard" Control_Default="Cancel" Control_Cancel="Cancel"/>
+    <ROW Dialog="SetupResume" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="SetupType" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="SplashBitmap" HCentering="50" VCentering="50" Width="374" Height="266" Attributes="3" Title="[ProductName] - InstallShield Wizard" Control_Default="Next" Control_Cancel="Cancel"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiEventMappingComponent">
+    <ROW Dialog_="SetupInitialization" Control_="ActionText" Event="ActionText" Attribute="Text"/>
+    <ROW Dialog_="SetupInitialization" Control_="ActionData" Event="ActionData" Attribute="Text"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionText" Event="ActionText" Attribute="Text"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionProgress95" Event="InstallFiles" Attribute="Progress"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionProgress95" Event="MoveFiles" Attribute="Progress"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionProgress95" Event="RemoveFiles" Attribute="Progress"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionProgress95" Event="RemoveRegistryValues" Attribute="Progress"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionProgress95" Event="UnmoveFiles" Attribute="Progress"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionProgress95" Event="WriteIniValues" Attribute="Progress"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionProgress95" Event="WriteRegistryValues" Attribute="Progress"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionProgress95" Event="AdminInstallFinalize" Attribute="Progress"/>
+    <ROW Dialog_="SetupProgress" Control_="ActionProgress95" Event="SetProgress" Attribute="Progress"/>
+    <ROW Dialog_="CustomSetup" Control_="ItemDescription" Event="SelectionDescription" Attribute="Text"/>
+    <ROW Dialog_="CustomSetup" Control_="Location" Event="SelectionPath" Attribute="Text"/>
+    <ROW Dialog_="CustomSetup" Control_="Size" Event="SelectionSize" Attribute="Text"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="_7zip.chm"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="_7zip32.dll"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="_7z.dll"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="_7z.exe"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="Folder_7Zip"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="_7zfm.exe"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="_7zg.exe"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="history.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="license.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="readme.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="af.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="an.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ar.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ast.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="az.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ba.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="be.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="bg.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="bn.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="br.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ca.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="co.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="cs.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="cy.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="da.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="de.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="el.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="Folder_Lang"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="eo.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="es.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="et.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="eu.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ext.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="fa.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="fi.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="fr.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="fur.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="fy.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ga.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="gl.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="gu.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="he.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="hi.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="hr.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="hu.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="hy.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="id.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="io.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="is.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="it.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ja.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ka.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="kaa.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="kab.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="kk.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ko.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="kuckb.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ku.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ky.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="lij.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="lt.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="lv.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="mk.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="mn.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="mng.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="mng2.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="mr.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ms.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="nb.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ne.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="nl.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="nn.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="pain.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="pl.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ps.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ptbr.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="pt.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ro.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ru.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="sa.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="si.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="sk.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="sl.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="sq.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="srspc.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="srspl.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="sv.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="sw.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ta.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="tg.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="th.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="tk.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="tr.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="tt.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="ug.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="uk.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="uzcyrl.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="uz.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="va.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="vi.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="yo.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="zhcn.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="zhtw.txt"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="_7zip.dll_COM"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="RegistryData_HKLM"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="RegistryData_HKCU"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="RegistryData_HKCR"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="RegistryData_HKU"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="RegistryData_HKCR64"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="RegistryData_HKLM64"/>
+    <ROW Feature_="_7ZipFileManagerNewFeature" Component_="RemoveRegistry_Component"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="zFM.exe" SourcePath="Prog64\7-Zip\7zFM.exe" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="ISPreventDowngrade" Condition="ISFOUNDNEWERPRODUCTVERSION" Sequence="222"/>
+    <ROW Action="setUserProfileNT" Condition="VersionNT" Sequence="963"/>
+    <ROW Action="SetAllUsersProfileNT" Condition="VersionNT = 400" Sequence="964"/>
+    <ROW Action="setAllUsersProfile2K" Condition="VersionNT &gt;= 500" Sequence="965"/>
+    <ROW Action="setPublicProfileVista" Condition="VersionNT &gt;= 600" Sequence="966"/>
+    <ROW Action="setSysArmProfileVista" Condition="VersionNT &gt;= 600" Sequence="967"/>
+    <ROW Action="SetARPINSTALLLOCATION" Sequence="1218"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="ISPreventDowngrade" Condition="ISFOUNDNEWERPRODUCTVERSION" Sequence="225"/>
+    <ROW Action="setUserProfileNT" Condition="VersionNT" Sequence="916"/>
+    <ROW Action="SetAllUsersProfileNT" Condition="VersionNT = 400" Sequence="917"/>
+    <ROW Action="setAllUsersProfile2K" Condition="VersionNT &gt;= 500" Sequence="918"/>
+    <ROW Action="setPublicProfileVista" Condition="VersionNT &gt;= 600" Sequence="919"/>
+    <ROW Action="setSysArmProfileVista" Condition="VersionNT &gt;= 600" Sequence="920"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 600)" Description="[ProductName] cannot be installed on [WindowsTypeNT60Display]." DescriptionLocId="AI.LaunchCondition.NoNT60" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRadioButtonComponent">
+    <ROW Property="ApplicationUsers" Order="1" Value="AllUsers" X="1" Y="7" Width="290" Height="14" Text="&amp;Anyone who uses this computer (all users)"/>
+    <ROW Property="ApplicationUsers" Order="2" Value="OnlyCurrentUser" X="1" Y="23" Width="290" Height="14" Text="Only for &amp;me ([USERNAME])"/>
+    <ROW Property="AgreeToLicense" Order="1" Value="No" X="0" Y="15" Width="291" Height="15" Text="I &amp;do not accept the terms in the license agreement"/>
+    <ROW Property="AgreeToLicense" Order="2" Value="Yes" X="0" Y="0" Width="291" Height="15" Text="I &amp;accept the terms in the license agreement"/>
+    <ROW Property="_IsMaintenance" Order="1" Value="Change" X="0" Y="0" Width="290" Height="14" Text="{&amp;MSSansBold8}&amp;Modify"/>
+    <ROW Property="_IsMaintenance" Order="2" Value="Reinstall" X="0" Y="60" Width="290" Height="14" Text="{&amp;MSSansBold8}Re&amp;pair"/>
+    <ROW Property="_IsMaintenance" Order="3" Value="Remove" X="0" Y="120" Width="290" Height="14" Text="{&amp;MSSansBold8}&amp;Remove"/>
+    <ROW Property="RestartManagerOption" Order="1" Value="CloseRestart" X="6" Y="9" Width="331" Height="14" Text="Automatically close and attempt to restart applications."/>
+    <ROW Property="RestartManagerOption" Order="2" Value="Reboot" X="6" Y="21" Width="331" Height="14" Text="Do not close applications. (A reboot will be required.)"/>
+    <ROW Property="_IsSetupTypeMin" Order="1" Value="Typical" X="0" Y="0" Width="264" Height="14" Text="{&amp;MSSansBold8}&amp;Complete"/>
+    <ROW Property="_IsSetupTypeMin" Order="2" Value="Custom" X="0" Y="60" Width="264" Height="14" Text="{&amp;MSSansBold8}Cu&amp;stom"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="A749F25A9E24CBE9859CF7B15255E14" Root="0" Key="CLSID\{4A749F25-A9E2-4CBE-9859-CF7B15255E14}" Name="\"/>
+    <ROW Registry="A84F9C26164485CA7D94B27F8AC009E" Root="0" Key="CLSID\{3A84F9C2-6164-485C-A7D9-4B27F8AC009E}" Name="\"/>
+    <ROW Registry="ACE20B77A456FA88D547DB6CEEDD5" Root="0" Key="CLSID\{628ACE20-B77A-456F-A88D-547DB6CEEDD5}" Name="\"/>
+    <ROW Registry="AppPaths" Root="2" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths" Name="\"/>
+    <ROW Registry="AppPaths_1" Root="2" Key="[REG_PROP1]SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths" Name="\"/>
+    <ROW Registry="AppSwitched" Root="1" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppSwitched" Name="\"/>
+    <ROW Registry="Application" Root="0" Key="MSEdgeHTM\Application" Name="\"/>
+    <ROW Registry="Application_1" Root="0" Key="MSEdgeMHT\Application" Name="\"/>
+    <ROW Registry="Application_2" Root="0" Key="MSEdgePDF\Application" Name="\"/>
+    <ROW Registry="Approved" Root="2" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved" Name="\"/>
+    <ROW Registry="Approved_1" Root="2" Key="SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved" Name="\"/>
+    <ROW Registry="B54934CD71A64698BDC2AFEA5B86504C" Root="0" Key="CLSID\{B54934CD-71A6-4698-BDC2-AFEA5B86504C}" Name="\"/>
+    <ROW Registry="C9C2B80777314F3481B744FF7779522B" Root="0" Key="TypeLib\{C9C2B807-7731-4F34-81B7-44FF7779522B}" Name="\"/>
+    <ROW Registry="CLSID" Root="0" Key="CLSID" Name="\"/>
+    <ROW Registry="CLSIDCOM_PROP_64" Root="0" Key="CLSID[COM_PROP_64]" Name="\"/>
+    <ROW Registry="CLSID_1" Root="2" Key="SOFTWARE\WOW6432Node\Classes\CLSID" Name="\"/>
+    <ROW Registry="Classes" Root="2" Key="SOFTWARE\WOW6432Node\Classes" Name="\"/>
+    <ROW Registry="ContextMenuHandlers" Root="0" Key="*\shellex\ContextMenuHandlers" Name="\"/>
+    <ROW Registry="ContextMenuHandlers_1" Root="0" Key="Directory\shellex\ContextMenuHandlers" Name="\"/>
+    <ROW Registry="ContextMenuHandlers_2" Root="0" Key="Folder\shellex\ContextMenuHandlers" Name="\"/>
+    <ROW Registry="CurrentVersion" Root="2" Key="SOFTWARE\Microsoft\Windows\CurrentVersion" Name="\"/>
+    <ROW Registry="CurrentVersion_1" Root="2" Key="[REG_PROP1]SOFTWARE\Microsoft\Windows\CurrentVersion" Name="\"/>
+    <ROW Registry="CurrentVersion_2" Root="1" Key="SOFTWARE\Microsoft\Windows\CurrentVersion" Name="\"/>
+    <ROW Registry="CurrentVersion_3" Root="2" Key="SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion" Name="\"/>
+    <ROW Registry="DefaultIcon" Root="0" Key="MSEdgeHTM\DefaultIcon" Name="\"/>
+    <ROW Registry="DefaultIcon_1" Root="0" Key="MSEdgeMHT\DefaultIcon" Name="\"/>
+    <ROW Registry="DefaultIcon_2" Root="0" Key="MSEdgePDF\DefaultIcon" Name="\"/>
+    <ROW Registry="Directory" Root="0" Key="Directory" Name="\"/>
+    <ROW Registry="DragDropHandlers" Root="0" Key="Directory\shellex\DragDropHandlers" Name="\"/>
+    <ROW Registry="DragDropHandlers_1" Root="0" Key="Drive\shellex\DragDropHandlers" Name="\"/>
+    <ROW Registry="Drive" Root="0" Key="Drive" Name="\"/>
+    <ROW Registry="Explorer" Root="1" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" Name="\"/>
+    <ROW Registry="F6940C1278A1000000100020000" Root="0" Key="CLSID[COM_PROP_64]\{23170F69-40C1-278A-1000-000100020000}" Name="\"/>
+    <ROW Registry="F6940C1278A1000000100020000_1" Root="2" Key="SOFTWARE\WOW6432Node\Classes\CLSID\{23170F69-40C1-278A-1000-000100020000}" Name="\"/>
+    <ROW Registry="FD497181D004B19AF5F070AF6D5D54C" Root="0" Key="CLSID\{1FD49718-1D00-4B19-AF5F-070AF6D5D54C}" Name="\"/>
+    <ROW Registry="FeatureUsage" Root="1" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage" Name="\"/>
+    <ROW Registry="Folder" Root="0" Key="Folder" Name="\"/>
+    <ROW Registry="InProcServer32" Root="0" Key="CLSID\{3A84F9C2-6164-485C-A7D9-4B27F8AC009E}\InProcServer32" Name="\"/>
+    <ROW Registry="InprocServer32" Root="0" Key="CLSID\{1FD49718-1D00-4B19-AF5F-070AF6D5D54C}\InprocServer32" Name="\"/>
+    <ROW Registry="InprocServer32_1" Root="0" Key="CLSID[COM_PROP_64]\{23170F69-40C1-278A-1000-000100020000}\InprocServer32" Name="\"/>
+    <ROW Registry="InprocServer32_2" Root="0" Key="CLSID\{B54934CD-71A6-4698-BDC2-AFEA5B86504C}\InprocServer32" Name="\"/>
+    <ROW Registry="InprocServer32_3" Root="2" Key="SOFTWARE\WOW6432Node\Classes\CLSID\{23170F69-40C1-278A-1000-000100020000}\InprocServer32" Name="\"/>
+    <ROW Registry="LocalServer32" Root="0" Key="CLSID\{4A749F25-A9E2-4CBE-9859-CF7B15255E14}\LocalServer32" Name="\"/>
+    <ROW Registry="LocalServer32_1" Root="0" Key="CLSID\{628ACE20-B77A-456F-A88D-547DB6CEEDD5}\LocalServer32" Name="\"/>
+    <ROW Registry="MSEdgeHTM" Root="0" Key="MSEdgeHTM" Name="\"/>
+    <ROW Registry="MSEdgeMHT" Root="0" Key="MSEdgeMHT" Name="\"/>
+    <ROW Registry="MSEdgePDF" Root="0" Key="MSEdgePDF" Name="\"/>
+    <ROW Registry="Manufacturer" Root="-1" Key="Software\[Manufacturer]" Name="\"/>
+    <ROW Registry="Microsoft" Root="2" Key="SOFTWARE\Microsoft" Name="\"/>
+    <ROW Registry="Microsoft_1" Root="2" Key="[REG_PROP1]SOFTWARE\Microsoft" Name="\"/>
+    <ROW Registry="Microsoft_2" Root="1" Key="SOFTWARE\Microsoft" Name="\"/>
+    <ROW Registry="Microsoft_3" Root="2" Key="SOFTWARE\WOW6432Node\Microsoft" Name="\"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="ProductName" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="\"/>
+    <ROW Registry="REG_PROP1SOFTWARE" Root="2" Key="[REG_PROP1]SOFTWARE" Name="\"/>
+    <ROW Registry="Registry1" Root="2" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\7zFM.exe" Value="[APPDIR]7zFM.exe" Component_="_7zfm.exe"/>
+    <ROW Registry="Registry2" Root="2" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\7zFM.exe" Name="Path" Value="[APPDIR]" Component_="_7zfm.exe"/>
+    <ROW Registry="Registry3" Root="2" Key="[REG_PROP1]SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\7zFM.exe" Value="[APPDIR]7zFM.exe" Component_="_7zfm.exe"/>
+    <ROW Registry="Registry4" Root="2" Key="[REG_PROP1]SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\7zFM.exe" Name="Path" Value="[APPDIR]" Component_="_7zfm.exe"/>
+    <ROW Registry="Registry_026EA308_B7AB_467F_A445_BDA2A0816FA7_" Root="0" Key="Drive\shellex\DragDropHandlers\7-Zip" Value="{23170F69-40C1-278A-1000-000100020000}" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_09EB72D4_B278_48B6_AC70_9B6A6201E2B9_" Root="1" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppSwitched" Name="[USERPROFILE_IMP]Desktop\Repackager\Repack.exe" Value="#2" Component_="RegistryData_HKCU" VirtualValue="#"/>
+    <ROW Registry="Registry_0E664E03_083D_4E65_8222_956B9251BE93_" Root="0" Key="CLSID[COM_PROP_64]\{23170F69-40C1-278A-1000-000100020000}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="_7zip.dll_COM"/>
+    <ROW Registry="Registry_1A3E4EE8_888B_40C8_A9F9_C33B51B2D549_" Root="0" Key="MSEdgePDF\DefaultIcon" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\msedge.exe,11" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_1D463E60_83F4_4A81_AE17_2AE486EE26A3_" Root="2" Key="SOFTWARE\WOW6432Node\Classes\CLSID\{23170F69-40C1-278A-1000-000100020000}" Value="7-Zip Shell Extension" Component_="RegistryData_HKLM"/>
+    <ROW Registry="Registry_1F3E95B1_AA2E_4927_A786_E69088A8BC5D_" Root="0" Key="CLSID\{3A84F9C2-6164-485C-A7D9-4B27F8AC009E}\InProcServer32" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\PdfPreview\PdfPreviewHandler.dll" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_2642055F_E146_46AE_9233_345F2C7F27C8_" Root="0" Key="MSEdgeHTM\DefaultIcon" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\msedge.exe,0" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_3093168A_F7C7_419E_8AF4_B012EA36CA8F_" Root="1" Key="SOFTWARE\7-Zip" Name="Path64" Value="[APPDIR]" Component_="RegistryData_HKCU"/>
+    <ROW Registry="Registry_3EDD4DAA_F0A0_4CFB_A5DC_9F0A06CF8F03_" Root="0" Key="CLSID\{1FD49718-1D00-4B19-AF5F-070AF6D5D54C}\InprocServer32" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\BHO\ie_to_edge_bho_64.dll" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_40FD4324_4FB4_4828_B350_E9A8B908981C_" Root="0" Key="CLSID\{628ACE20-B77A-456F-A88D-547DB6CEEDD5}\LocalServer32" Name="ServerExecutable" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\notification_helper.exe" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_50065FC5_3CD2_4FE9_908E_D0C13F36D9CE_" Root="2" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved" Name="{23170F69-40C1-278A-1000-000100020000}" Value="7-Zip Shell Extension" Component_="RegistryData_HKLM64"/>
+    <ROW Registry="Registry_56EC599B_2DD0_4985_A025_423548F6F851_" Root="2" Key="SOFTWARE\WOW6432Node\Classes\CLSID\{23170F69-40C1-278A-1000-000100020000}\InprocServer32" Value="[APPDIR]7-zip32.dll" Component_="RegistryData_HKLM"/>
+    <ROW Registry="Registry_58BFB423_2568_4F38_971E_188157A97842_" Root="0" Key="CLSID\{3A84F9C2-6164-485C-A7D9-4B27F8AC009E}" Name="DisplayName" Value="PDF Preview Handler" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_6A1EDB66_68B9_4150_8E31_4D02A18E81EC_" Root="0" Key="Directory\shellex\DragDropHandlers\7-Zip" Value="{23170F69-40C1-278A-1000-000100020000}" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_6D1CBAFE_3F31_4BD2_B1E4_A78C66A14F5F_" Root="2" Key="SOFTWARE\WOW6432Node\Classes\CLSID\{23170F69-40C1-278A-1000-000100020000}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RegistryData_HKLM"/>
+    <ROW Registry="Registry_6F52512C_FEFB_40D0_8F40_A061E26BBD6A_" Root="0" Key="CLSID\{4A749F25-A9E2-4CBE-9859-CF7B15255E14}\LocalServer32" Value="&quot;[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\notification_click_helper.exe&quot;" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_78A9C59F_A8C4_4BFA_88B3_DCD67341AB84_" Root="0" Key="MSEdgePDF\Application" Name="ApplicationIcon" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\msedge.exe,0" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_78DD693B_7101_464C_B467_AF956B211C56_" Root="0" Key="*\shellex\ContextMenuHandlers\7-Zip" Value="{23170F69-40C1-278A-1000-000100020000}" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_818454C4_DC08_4139_BB5F_498CFDD40D68_" Root="2" Key="SOFTWARE\7-Zip" Name="Path64" Value="[APPDIR]" Component_="RegistryData_HKLM64"/>
+    <ROW Registry="Registry_93E049DB_1FF3_48EE_A1B5_ED5FA2EE1E9A_" Root="0" Key="CLSID\{4A749F25-A9E2-4CBE-9859-CF7B15255E14}\LocalServer32" Name="ServerExecutable" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\notification_click_helper.exe" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_9F49007F_2786_4C52_BDD6_4ED9AFC7F15B_" Root="1" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppSwitched" Name="Microsoft.Windows.Explorer" Value="#4" Component_="RegistryData_HKCU" VirtualValue="#"/>
+    <ROW Registry="Registry_A8E79ECD_6DE4_4417_B348_677274C0B984_" Root="0" Key="CLSID\{3A84F9C2-6164-485C-A7D9-4B27F8AC009E}" Name="AppID" Value="{6d2b5079-2f0b-48dd-ab7f-97cec514d30b}" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_ACD6B903_4BB1_4834_9CDE_C6BBD052CE9F_" Root="2" Key="SOFTWARE\7-Zip" Name="Path" Value="[APPDIR]" Component_="RegistryData_HKLM64"/>
+    <ROW Registry="Registry_B91F13CA_DC13_42ED_904B_64A765B19CBD_" Root="2" Key="SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved" Name="{23170F69-40C1-278A-1000-000100020000}" Value="7-Zip Shell Extension" Component_="RegistryData_HKLM"/>
+    <ROW Registry="Registry_BD069FB0_4383_471D_AA35_D1133DA3BF60_" Root="0" Key="Directory\shellex\ContextMenuHandlers\7-Zip" Value="{23170F69-40C1-278A-1000-000100020000}" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_BE9733F6_E125_4742_BF71_F6D1C6352FB3_" Root="0" Key="MSEdgeMHT\DefaultIcon" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\msedge.exe,0" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_C238BCBE_5A3B_43AC_9420_C01997052AFD_" Root="0" Key="CLSID\{3A84F9C2-6164-485C-A7D9-4B27F8AC009E}" Name="EnablePreviewHandler" Value="#1" Component_="RegistryData_HKCR64" VirtualValue="#"/>
+    <ROW Registry="Registry_CF351D3D_DF37_48C0_89DA_6CDFF90D38A3_" Root="0" Key="CLSID\{3A84F9C2-6164-485C-A7D9-4B27F8AC009E}\InProcServer32" Name="ThreadingModel" Value="Apartment" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_D512A97F_D3D4_4794_9E93_39E49DC4DB55_" Root="0" Key="MSEdgeHTM\Application" Name="ApplicationIcon" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\msedge.exe,0" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_DB939778_1C98_4448_9A37_7EB6AC44358F_" Root="0" Key="TypeLib\{C9C2B807-7731-4F34-81B7-44FF7779522B}\1.0\0\win32" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\elevation_service.exe" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_DC38B8A5_5A16_4425_B050_CA357EE6749E_" Root="0" Key="CLSID\{B54934CD-71A6-4698-BDC2-AFEA5B86504C}\InprocServer32" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\EBWebView\x64\EmbeddedBrowserWebView.dll" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_E3956275_1D13_487D_9187_66779976ADE5_" Root="0" Key="Folder\shellex\ContextMenuHandlers\7-Zip" Value="{23170F69-40C1-278A-1000-000100020000}" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_E3C8B9CA_D5D6_4246_81F4_7035AFF9E1E1_" Root="0" Key="MSEdgeMHT\Application" Name="ApplicationIcon" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\msedge.exe,0" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_E58FFFDC_76A2_4EB8_B5A7_66DF01DBF8DD_" Root="1" Key="SOFTWARE\7-Zip" Name="Path" Value="[APPDIR]" Component_="RegistryData_HKCU"/>
+    <ROW Registry="Registry_E8DB4ED5_BC30_4B25_BB4C_752F1444FCDE_" Root="0" Key="TypeLib\{C9C2B807-7731-4F34-81B7-44FF7779522B}\1.0\0\win64" Value="[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\elevation_service.exe" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_ED7064ED_4333_4CF9_AC9C_FC2F97C65B66_" Root="0" Key="CLSID\{3A84F9C2-6164-485C-A7D9-4B27F8AC009E}" Value="PDF Preview Handler" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_EE266E68_9429_4462_93DB_7966C397A3F7_" Root="0" Key="CLSID\{628ACE20-B77A-456F-A88D-547DB6CEEDD5}\LocalServer32" Value="&quot;[ProgramFilesFolder]Microsoft\Edge\Application\139.0.3405.125\notification_helper.exe&quot;" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="Registry_FD32313A_CFB3_44D5_9DD0_BFEFD4F9D13F_" Root="0" Key=".pdf\ShellEx\{8895b1c6-b41f-4c1c-a562-0d564250836f}" Value="{3A84F9C2-6164-485C-A7D9-4B27F8AC009E}" Component_="RegistryData_HKCR64"/>
+    <ROW Registry="SOFTWARE" Root="2" Key="SOFTWARE" Name="\"/>
+    <ROW Registry="SOFTWARE_1" Root="1" Key="SOFTWARE" Name="\"/>
+    <ROW Registry="ShellEx" Root="0" Key=".pdf\ShellEx" Name="\"/>
+    <ROW Registry="ShellExtensions" Root="2" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions" Name="\"/>
+    <ROW Registry="ShellExtensions_1" Root="2" Key="SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Shell Extensions" Name="\"/>
+    <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
+    <ROW Registry="TypeLib" Root="0" Key="TypeLib" Name="\"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="WOW6432Node" Root="2" Key="SOFTWARE\WOW6432Node" Name="\"/>
+    <ROW Registry="Windows" Root="2" Key="SOFTWARE\Microsoft\Windows" Name="\"/>
+    <ROW Registry="Windows_1" Root="2" Key="[REG_PROP1]SOFTWARE\Microsoft\Windows" Name="\"/>
+    <ROW Registry="Windows_2" Root="1" Key="SOFTWARE\Microsoft\Windows" Name="\"/>
+    <ROW Registry="Windows_3" Root="2" Key="SOFTWARE\WOW6432Node\Microsoft\Windows" Name="\"/>
+    <ROW Registry="Zip" Root="0" Key="*\shellex\ContextMenuHandlers\7-Zip" Name="\"/>
+    <ROW Registry="Zip_1" Root="0" Key="Directory\shellex\ContextMenuHandlers\7-Zip" Name="\"/>
+    <ROW Registry="Zip_2" Root="0" Key="Directory\shellex\DragDropHandlers\7-Zip" Name="\"/>
+    <ROW Registry="Zip_3" Root="0" Key="Drive\shellex\DragDropHandlers\7-Zip" Name="\"/>
+    <ROW Registry="Zip_4" Root="0" Key="Folder\shellex\ContextMenuHandlers\7-Zip" Name="\"/>
+    <ROW Registry="Zip_5" Root="1" Key="SOFTWARE\7-Zip" Name="\"/>
+    <ROW Registry="Zip_6" Root="2" Key="SOFTWARE\7-Zip" Name="\"/>
+    <ROW Registry="_" Root="0" Key="TypeLib\{C9C2B807-7731-4F34-81B7-44FF7779522B}\1.0" Name="\"/>
+    <ROW Registry="__1" Root="0" Key="TypeLib\{C9C2B807-7731-4F34-81B7-44FF7779522B}\1.0\0" Name="\"/>
+    <ROW Registry="__2" Root="0" Key="*" Name="\"/>
+    <ROW Registry="b1c6b41f4c1ca5620d564250836f" Root="0" Key=".pdf\ShellEx\{8895b1c6-b41f-4c1c-a562-0d564250836f}" Name="\"/>
+    <ROW Registry="pdf" Root="0" Key=".pdf" Name="\"/>
+    <ROW Registry="shellex" Root="0" Key="*\shellex" Name="\"/>
+    <ROW Registry="shellex_1" Root="0" Key="Directory\shellex" Name="\"/>
+    <ROW Registry="shellex_2" Root="0" Key="Drive\shellex" Name="\"/>
+    <ROW Registry="shellex_3" Root="0" Key="Folder\shellex" Name="\"/>
+    <ROW Registry="win32" Root="0" Key="TypeLib\{C9C2B807-7731-4F34-81B7-44FF7779522B}\1.0\0\win32" Name="\"/>
+    <ROW Registry="win64" Root="0" Key="TypeLib\{C9C2B807-7731-4F34-81B7-44FF7779522B}\1.0\0\win64" Name="\"/>
+    <ROW Registry="zFM.exe" Root="2" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\7zFM.exe" Name="\"/>
+    <ROW Registry="zFM.exe_1" Root="2" Key="[REG_PROP1]SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\7zFM.exe" Name="\"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRemoveFileComponent">
+    <ROW FileKey="RemoveFolder___zip1" Component_="_7zfm.exe" DirProperty="__zip1" InstallMode="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Zip23.01" Directory_="SHORTCUTDIR" Name="7ZIP23~1.01|7 Zip 23.01" Component_="_7zfm.exe" Target="[#_zfm.exe]" Hotkey="0" Icon_="zFM.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="Zip23.01_1" Directory_="DesktopFolder" Name="7ZIP23~1.01|7 Zip 23.01" Component_="_7zfm.exe" Target="[#_zfm.exe]" Hotkey="0" Icon_="zFM.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="Zip23.01_2" Directory_="StartMenuFolder" Name="7ZIP23~1.01|7 Zip 23.01" Component_="_7zfm.exe" Target="[#_zfm.exe]" Hotkey="0" Icon_="zFM.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="__Zip_File_Manager" Directory_="__zip1" Name="7-ZIPF~1|7-Zip File Manager" Component_="_7zfm.exe" Target="[APPDIR]7zFM.exe" Hotkey="0" IconIndex="0" ShowCmd="1"/>
+    <ROW Shortcut="__Zip_Help" Directory_="__zip1" Name="7-ZIPH~1|7-Zip Help" Component_="_7zip.chm" Target="[APPDIR]7-zip.chm" Hotkey="0" IconIndex="0" ShowCmd="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
+    <ROW TextStyle="Arial8" FaceName="Arial" Size="8" Color="0" StyleBits="0"/>
+    <ROW TextStyle="Arial9" FaceName="Arial" Size="9" Color="0" StyleBits="0"/>
+    <ROW TextStyle="ArialBlue10" FaceName="Arial" Size="10" Color="16711680" StyleBits="0"/>
+    <ROW TextStyle="ArialBlueStrike10" FaceName="Arial" Size="10" Color="16711680" StyleBits="8"/>
+    <ROW TextStyle="CourierNew8" FaceName="Courier New" Size="8" Color="0" StyleBits="0"/>
+    <ROW TextStyle="CourierNew9" FaceName="Courier New" Size="9" Color="0" StyleBits="0"/>
+    <ROW TextStyle="MSGothic9" FaceName="MS Gothic" Size="9" Color="0" StyleBits="0"/>
+    <ROW TextStyle="MSSGreySerif8" FaceName="MS Sans Serif" Size="8" Color="8421504" StyleBits="0"/>
+    <ROW TextStyle="MSSWhiteSerif8" FaceName="Tahoma" Size="8" Color="16777215" StyleBits="0"/>
+    <ROW TextStyle="MSSansBold8" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>
+    <ROW TextStyle="MSSansSerif8" FaceName="MS Sans Serif" Size="8" Color="0" StyleBits="0"/>
+    <ROW TextStyle="MSSansSerif9" FaceName="MS Sans Serif" Size="9" Color="0" StyleBits="0"/>
+    <ROW TextStyle="Tahoma10" FaceName="Tahoma" Size="10" Color="0" StyleBits="0"/>
+    <ROW TextStyle="Tahoma8" FaceName="Tahoma" Size="8" Color="0" StyleBits="0"/>
+    <ROW TextStyle="Tahoma9" FaceName="Tahoma" Size="9" Color="0" StyleBits="0"/>
+    <ROW TextStyle="TahomaBold10" FaceName="Tahoma" Size="10" Color="0" StyleBits="1"/>
+    <ROW TextStyle="TahomaBold8" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>
+    <ROW TextStyle="Times8" FaceName="Times New Roman" Size="8" Color="0" StyleBits="0"/>
+    <ROW TextStyle="Times9" FaceName="Times New Roman" Size="9" Color="0" StyleBits="0"/>
+    <ROW TextStyle="TimesItalic12" FaceName="Times New Roman" Size="12" Color="0" StyleBits="2"/>
+    <ROW TextStyle="TimesItalicBlue10" FaceName="Times New Roman" Size="10" Color="16711680" StyleBits="2"/>
+    <ROW TextStyle="TimesRed16" FaceName="Times New Roman" Size="16" Color="255" StyleBits="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUITextComponent">
+    <ROW Key="MenuAbsent" Text="This feature will not be available." TextLocId="UIText.MenuAbsent" MsiKey="MenuAbsent"/>
+    <ROW Key="MenuAdvertise" Text="This feature will be installed when required." TextLocId="UIText.MenuAdvertise" MsiKey="MenuAdvertise"/>
+    <ROW Key="MenuAllCD" Text="This feature, and all subfeatures, will be installed to run from the CD." TextLocId="UIText.MenuAllCD" MsiKey="MenuAllCD"/>
+    <ROW Key="MenuAllLocal" Text="This feature, and all subfeatures, will be installed on local hard drive." TextLocId="UIText.MenuAllLocal" MsiKey="MenuAllLocal"/>
+    <ROW Key="MenuAllNetwork" Text="This feature, and all subfeatures, will be installed to run from the network." TextLocId="UIText.MenuAllNetwork" MsiKey="MenuAllNetwork"/>
+    <ROW Key="MenuCD" Text="This feature will be installed to run from CD." TextLocId="UIText.MenuCD" MsiKey="MenuCD"/>
+    <ROW Key="MenuLocal" Text="This feature will be installed on local hard drive." TextLocId="UIText.MenuLocal" MsiKey="MenuLocal"/>
+    <ROW Key="MenuNetwork" Text="This feature will be installed to run from network." TextLocId="UIText.MenuNetwork" MsiKey="MenuNetwork"/>
+    <ROW Key="NewFolder" Text="Fldr|New Folder"/>
+    <ROW Key="SelAbsentAbsent" Text="GB" TextLocId="UIText.SelAbsentAbsent" MsiKey="SelAbsentAbsent"/>
+    <ROW Key="SelAbsentAdvertise" Text="This feature will be set to be installed when required." TextLocId="UIText.SelAbsentAdvertise" MsiKey="SelAbsentAdvertise"/>
+    <ROW Key="SelAbsentCD" Text="This feature will be installed to run from CD." TextLocId="UIText.SelAbsentCD" MsiKey="SelAbsentCD"/>
+    <ROW Key="SelAbsentLocal" Text="This feature will be installed on the local hard drive." TextLocId="UIText.SelAbsentLocal" MsiKey="SelAbsentLocal"/>
+    <ROW Key="SelAbsentNetwork" Text="This feature will be installed to run from the network." TextLocId="UIText.SelAbsentNetwork" MsiKey="SelAbsentNetwork"/>
+    <ROW Key="SelAdvertiseAbsent" Text="This feature will become unavailable." TextLocId="UIText.SelAdvertiseAbsent" MsiKey="SelAdvertiseAbsent"/>
+    <ROW Key="SelAdvertiseAdvertise" Text="Will be installed when required." TextLocId="UIText.SelAdvertiseAdvertise" MsiKey="SelAdvertiseAdvertise"/>
+    <ROW Key="SelAdvertiseCD" Text="This feature will be available to run from CD." TextLocId="UIText.SelAdvertiseCD" MsiKey="SelAdvertiseCD"/>
+    <ROW Key="SelAdvertiseLocal" Text="This feature will be installed on your local hard drive." TextLocId="UIText.SelAdvertiseLocal" MsiKey="SelAdvertiseLocal"/>
+    <ROW Key="SelAdvertiseNetwork" Text="This feature will be available to run from the network." TextLocId="UIText.SelAdvertiseNetwork" MsiKey="SelAdvertiseNetwork"/>
+    <ROW Key="SelCDAbsent" Text="This feature will be uninstalled completely, and you won&apos;t be able to run it from CD." TextLocId="UIText.SelCDAbsent" MsiKey="SelCDAbsent"/>
+    <ROW Key="SelCDAdvertise" Text="This feature was run from the CD but will be set to be installed when required." TextLocId="UIText.SelCDAdvertise" MsiKey="SelCDAdvertise"/>
+    <ROW Key="SelCDCD" Text="This feature will continue to be run from the CD" TextLocId="UIText.SelCDCD" MsiKey="SelCDCD"/>
+    <ROW Key="SelCDLocal" Text="This feature was run from the CD but will be installed on the local hard drive." TextLocId="UIText.SelCDLocal" MsiKey="SelCDLocal"/>
+    <ROW Key="SelLocalAbsent" Text="This feature will be completely removed." TextLocId="UIText.SelLocalAbsent" MsiKey="SelLocalAbsent"/>
+    <ROW Key="SelLocalAdvertise" Text="This feature will be removed from your local hard drive but will be set to be installed when required." TextLocId="UIText.SelLocalAdvertise" MsiKey="SelLocalAdvertise"/>
+    <ROW Key="SelLocalCD" Text="This feature will be removed from your local hard drive but will still be available to run from CD." TextLocId="UIText.SelLocalCD" MsiKey="SelLocalCD"/>
+    <ROW Key="SelLocalLocal" Text="This feature will remain on your local hard drive." TextLocId="UIText.SelLocalLocal" MsiKey="SelLocalLocal"/>
+    <ROW Key="SelLocalNetwork" Text="This feature will be removed from your local hard drive, but will be still available to run from the network." TextLocId="UIText.SelLocalNetwork" MsiKey="SelLocalNetwork"/>
+    <ROW Key="SelNetworkAbsent" Text="This feature will be uninstalled completely, and you won&apos;t be able to run it from the network." TextLocId="UIText.SelNetworkAbsent" MsiKey="SelNetworkAbsent"/>
+    <ROW Key="SelNetworkAdvertise" Text="This feature was run from the network but will be installed when required." TextLocId="UIText.SelNetworkAdvertise" MsiKey="SelNetworkAdvertise"/>
+    <ROW Key="SelNetworkLocal" Text="This feature was run from the network but will be installed on the local hard drive." TextLocId="UIText.SelNetworkLocal" MsiKey="SelNetworkLocal"/>
+    <ROW Key="SelNetworkNetwork" Text="This feature will continue to be run from the network" TextLocId="UIText.SelNetworkNetwork" MsiKey="SelNetworkNetwork"/>
+    <ROW Key="TimeRemaining" Text="Time remaining: {[1] min }{[2] sec}" TextLocId="UIText.TimeRemaining" MsiKey="TimeRemaining"/>
+    <ROW Key="VolumeCostDifference" Text="Differences" TextLocId="UIText.VolumeCostDifference" MsiKey="VolumeCostDifference"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>
