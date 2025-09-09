@@ -1,0 +1,18 @@
+Line 91: AppName = "WinRAR"
+Line 92: AppVersion = "7.13.0.0"
+Line 93: AppArch = "x86"
+Line 94: AppLang = "EN"
+Line 95: AppInstallerExe = "WinRAR.msi"
+Line 96: AppInstallerArguments = " "
+Line 97: AppSucceedExitCodes = "0, 1641, 3010"
+Line 98: AppRebootExitCodes = "3010"
+Line 99: AppProcessesToClose = ""
+Line 100: AppScriptVersion = "1.0.0"
+Line 101: AppScriptDate = "2025-08-07"
+Line 102: AppScriptAuthor = "<author name>"
+Line 103: RequireAdmin = $true
+Line 104:AppUninstallKey = "{5330EEC3-585F-4554-8C96-5978690B86AD}"
+AppInstallerArguments = "/qn /norestart"
+
+
+

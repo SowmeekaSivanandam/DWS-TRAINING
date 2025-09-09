@@ -1,0 +1,58 @@
+Installed Advanced Installer in the packaging VM.
+
+Downloaded and kept the Inkscape MSI (source application).
+
+Clear Temp folder and Event viewer
+
+Launched Advanced Installer → Repackager tool.
+
+Selected the option Capture Setup to capture installation
+
+Started the capture process.
+
+Browse Inkscape msi file 
+
+Then click on local startup
+
+Select desktop create new folder name, select it
+
+Installed Inkscape MSI during the capture session.
+
+Pop up box appear click okay
+
+Wait till finish
+
+Completed installation and configuration of Inkscape.
+
+Then on top see there is option (MSIX package), select that
+
+Then click on digital signature,then click on create
+
+Then in product type Inkscape
+
+Then select local computer option and click okay
+
+After click dropdown and choose timestamp digicert
+
+then click on build
+
+After finish click on open with advance installer (from top)
+
+Check the name , icon and all and add publisher name
+
+Then go to shortcut tab,Click all shortcut one by one and check the Advertised shortcut
+and select icon if needed
+
+Click on Build(from top)
+
+Built the final MSIX package using Advanced Installer.
+
+Then installed certificate using  certificate manager(Manage computer certificate)
+
+Copied the MSIX package and its certificate (.cer file) to a clean VM.
+
+Installed the SDK & MSIX Packaging Tool in the clean VM.
+
+First step in clean VM – install the certificate (to trust the package).
+
+Then installed the Inkscape MSIX package.
